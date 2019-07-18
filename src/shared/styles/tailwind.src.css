@@ -1,7 +1,7 @@
 @tailwind base;
 
 .menu {
-  max-width: 250px;
+  max-width: 350px;
   min-width: 200px;
 }
 

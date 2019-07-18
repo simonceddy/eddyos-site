@@ -1,21 +1,43 @@
 import React from 'react';
 import { Switch, Route as Software } from 'react-router-dom';
-// import Home from './pages/Home';
-import About from './pages/About';
+import { bool } from 'prop-types';
+import { connect } from 'react-redux';
 import Desktop from '../shared/components/Desktop';
 import Layout from './Layout';
+import ModalWrapper from '../shared/components/ModalWrapper';
+import MenuModal from './Menu/MenuModal';
+import TextEditor from './Software/TextEditor/TextEditor';
+import { toggleMenu } from '../actions/osStateActions';
+import { getArticle } from '../actions/textEditorActions';
 
-function App() {
+function App({ dispatch, toggled }) {
+  const toggler = () => {
+    dispatch(toggleMenu({ menuToggled: !toggled }));
+  };
+
   return (
-    <Layout>
+    <Layout
+      toggled={toggled}
+      toggler={toggler}
+    >
       <Desktop>
+        {toggled ? (
+          <ModalWrapper toggled={toggled} toggler={toggler}>
+            <MenuModal />
+          </ModalWrapper>
+        ) : null}
         <Switch>
           <Software path="/" exact render={() => (<div className="text-5xl">Welcome</div>)} />
-          <Software path="/about" exact render={() => (<About key="a" />)} />
-          <Software path="/code" exact render={() => (<About key="a" />)} />
-          <Software path="/previous-work" exact render={() => (<About key="a" />)} />
-          <Software path="/services" exact render={() => (<About key="a" />)} />
-          <Software path="/contact" exact render={() => (<About key="a" />)} />
+          <Software
+            path="/text/:page"
+            exact
+            render={({ match }) => {
+              const article = dispatch(getArticle({ page: match.params.page }));
+              console.log(article.payload);
+              if (!article) return (<div>404</div>);
+              return (<TextEditor title={article.title}>{ article.body }</TextEditor>);
+            }}
+          />
           <Software render={() => (<div>404</div>)} />
         </Switch>
       </Desktop>
@@ -23,4 +45,13 @@ function App() {
   );
 }
 
-export default App;
+
+App.propTypes = {
+  toggled: bool.isRequired
+};
+
+function mapStateToProps(state) {
+  return { toggled: state.osState.menuToggled };
+}
+
+export default connect(mapStateToProps)(App);

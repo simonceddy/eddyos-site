@@ -1,21 +1,14 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
-import { toggleMenu } from '../../actions/osStateActions';
+import { func, bool } from 'prop-types';
+// import { toggleMenu } from '../../actions/osStateActions';
 import MenuButton from './MenuButton';
 
-function Header({ dispatch, toggled }) {
-  const toggle = (toggler) => {
-    dispatch(toggleMenu({
-      osState: {
-        menuToggled: toggler
-      }
-    }));
-  };
-
+function Header({ toggler, toggled }) {
   return (
     <div className="flex flex-row justify-between items-center mx-2 mt-1 w-full">
-      <MenuButton toggle={toggle} toggled={toggled} />
+      <MenuButton toggle={toggler} toggled={toggled} />
       <Link to="/" className="link no-underline">
         <h1 className="text-5xl mx-2">
           Simon Eddy
@@ -25,6 +18,11 @@ function Header({ dispatch, toggled }) {
   );
 }
 
-export default connect(state => ({
+Header.propTypes = {
+  toggler: func.isRequired,
+  toggled: bool.isRequired
+};
+
+export default connect(/* state => ({
   toggled: state.osState.menuToggled
-}))(Header);
+}) */)(Header);

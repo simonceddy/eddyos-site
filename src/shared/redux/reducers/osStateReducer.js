@@ -4,7 +4,7 @@ const osStateReducer = createReducer({
   menuToggled: false,
 },
 {
-  TOGGLE_MENU: (state, action) => Object.assign(state, action.payload.osState),
+  TOGGLE_MENU: (state, action) => Object.assign(state, action.payload),
   /* ADD_TODO: (state, action) => {
     // "mutate" the array by calling push()
     state.push(action.payload);

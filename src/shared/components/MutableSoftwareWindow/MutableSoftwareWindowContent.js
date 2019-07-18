@@ -1,12 +1,14 @@
 import React from 'react';
 
-function SoftwareWindowContent(props) {
+function MutableSoftwareWindowContent(props) {
+  console.log(props.children);
+
   return (
     <div className="bg-black text-green text-xl p-1">
-      {props.children}
-      <textarea />
+      {/* {props.children} */}
+      <textarea value={props.children} />
     </div>
   );
 }
 
-export default SoftwareWindowContent;
+export default MutableSoftwareWindowContent;

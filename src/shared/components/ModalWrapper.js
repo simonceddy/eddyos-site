@@ -1,12 +1,30 @@
 import React from 'react';
-import AriaModal from 'react-aria-modal';
+import Modal from 'react-responsive-modal';
+import { func, bool } from 'prop-types';
 
-function ModalWrapper(props) {
+function ModalWrapper({
+  toggled,
+  toggler,
+  children,
+  classNames = {
+    modal: ['bg-black']
+  }
+}) {
   return (
-    <AriaModal {...props}>
-      {props.children}
-    </AriaModal>
+    <Modal
+      classNames={classNames}
+      center
+      open={toggled}
+      onClose={() => (toggler(!toggled))}
+    >
+      {children}
+    </Modal>
   );
 }
+
+ModalWrapper.propTypes = {
+  toggled: bool.isRequired,
+  toggler: func.isRequired,
+};
 
 export default ModalWrapper;

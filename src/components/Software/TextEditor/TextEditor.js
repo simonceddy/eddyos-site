@@ -1,11 +1,14 @@
 import React from 'react';
 import SoftwareWindow from '../../../shared/components/SoftwareWindow/SoftwareWindow';
+import RndWrapper from '../../../shared/RndWrapper';
 
-function TextEditor(props) {
+function TextEditor({ article }) {
   return (
-    <SoftwareWindow title={props.title}>
-      {props.children}
-    </SoftwareWindow>
+    <RndWrapper>
+      <SoftwareWindow title={article.title}>
+        {article.body}
+      </SoftwareWindow>
+    </RndWrapper>
   );
 }
 

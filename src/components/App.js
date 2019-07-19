@@ -35,7 +35,7 @@ function App({ dispatch, toggled }) {
               const article = dispatch(getArticle({ page: match.params.page }));
               console.log(article.payload);
               if (!article) return (<div>404</div>);
-              return (<TextEditor title={article.title}>{ article.body }</TextEditor>);
+              return (<TextEditor article={article} />);
             }}
           />
           <Software render={() => (<div>404</div>)} />

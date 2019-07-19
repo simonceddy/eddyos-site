@@ -1,5 +1,5 @@
 import { createReducer } from 'redux-starter-kit';
-import articles from '../../../articles';
+import articles from '../../articles';
 
 const textEditorReducer = createReducer(articles, {
   GET_ARTICLE: (state, action) => state.find((page, id) => id === action.payload.page),

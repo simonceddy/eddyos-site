@@ -1,9 +1,9 @@
 import React from 'react';
 import { MdClose as Close } from 'react-icons/md';
 
-function ExitButton(props) {
+function ExitButton() {
   return (
-    <div className="exit-button" {...props}>
+    <div className="exit-button">
       <Close />
     </div>
   );

@@ -38,7 +38,7 @@
 }
 
 .exit-button {
-  @apply bg-green-dark text-black m-1;
+  @apply bg-green-dark text-black;
 }
 
 .exit-button:hover {

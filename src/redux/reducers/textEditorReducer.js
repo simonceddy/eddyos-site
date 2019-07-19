@@ -1,8 +1,20 @@
 import { createReducer } from 'redux-starter-kit';
-import articles from '../../articles';
+import articles from '../../storage/articles';
 
-const textEditorReducer = createReducer(articles, {
-  GET_ARTICLE: (state, action) => state.find((page, id) => id === action.payload.page),
+const textEditorReducer = createReducer({
+  articles,
+  current: null
+}, {
+  GET_ARTICLE: (state, action) => {
+    // console.log(state);
+    const article = state.find(page => page.key === action.payload.page);
+    console.log(article.body);
+  },
+
+  SET_CURRENT: (state, action) => {
+    const article = state.articles.find(page => page.key === action.payload.page);
+    return Object.assign(state, { current: article.key });
+  },
   /* {
     console.log(action.payload, state.articles);
     const key = findIndex(

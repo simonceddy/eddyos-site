@@ -15,3 +15,11 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
 }
+
+.underlay {
+  z-index: -1;
+}
+
+.underlay-logo {
+  color: #18ba209f;
+}

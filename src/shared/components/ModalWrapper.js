@@ -15,7 +15,7 @@ function ModalWrapper({
       classNames={classNames}
       center
       open={toggled}
-      onClose={() => (toggler(!toggled))}
+      onClose={toggler}
     >
       {children}
     </Modal>

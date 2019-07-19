@@ -4,10 +4,10 @@ import previousWork from './previousWork';
 import services from './services';
 import contact from './contact';
 
-export default [
+export default {
   about,
   code,
   previousWork,
   services,
   contact
-];
+};

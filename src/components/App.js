@@ -1,19 +1,35 @@
-import React from 'react';
-import { Switch, Route as Software } from 'react-router-dom';
-import { bool } from 'prop-types';
-import { connect } from 'react-redux';
-import Desktop from '../shared/components/Desktop';
+import React, { useState } from 'react';
+import { Switch } from 'react-router-dom';
+import Desktop from './Desktop';
 import Layout from './Layout';
+import Software from './Software/Software';
 import ModalWrapper from '../shared/components/ModalWrapper';
 import MenuModal from './Menu/MenuModal';
 import TextEditor from './Software/TextEditor/TextEditor';
-import { toggleMenu } from '../actions/osStateActions';
-import { getArticle } from '../actions/textEditorActions';
+import WrappedErrorBox from './Errors/WrappedErrorBox';
+import Error404 from './Errors/404';
 
-function App({ dispatch, toggled }) {
+function App({ os }) {
+  const [toggled, setToggled] = useState(false);
+
+  const [windowPos, setWindowPos] = useState({ x: 20, y: 20 });
+  const [windowSize, setWindowSize] = useState({ width: 360, height: 320 });
+
   const toggler = () => {
-    dispatch(toggleMenu({ menuToggled: !toggled }));
+    setToggled(!toggled);
   };
+
+  const errWindow = (props, callback) => (
+    <WrappedErrorBox
+      pos={windowPos}
+      setPos={setWindowPos}
+      size={windowSize}
+      setSize={setWindowSize}
+      {...props}
+    >
+      {callback()}
+    </WrappedErrorBox>
+  );
 
   return (
     <Layout
@@ -23,29 +39,57 @@ function App({ dispatch, toggled }) {
       <Desktop>
         {toggled ? (
           <ModalWrapper toggled={toggled} toggler={toggler}>
-            <MenuModal />
+            <MenuModal toggler={toggler} />
           </ModalWrapper>
         ) : null}
         <Switch>
-          <Software path="/" exact render={() => (<div className="text-5xl">Welcome</div>)} />
+          <Software
+            path="/"
+            exact
+            render={() => null}
+          />
           <Software
             path="/text/:page"
             exact
-            render={({ match }) => {
-              const article = dispatch(getArticle({ page: match.params.page }));
-              console.log(article.payload);
-              if (!article) return (<div>404</div>);
-              return (<TextEditor article={article} />);
+            render={(props) => {
+              // get article
+              const article = os.fs.load(`articles.${props.match.params.page}`);
+              if (!article) {
+                return (
+                  <WrappedErrorBox
+                    pos={windowPos}
+                    setPos={setWindowPos}
+                    size={windowSize}
+                    setSize={setWindowSize}
+                  >
+                    <Error404 />
+                  </WrappedErrorBox>
+                );
+              }
+              return (
+                <TextEditor
+                  pos={windowPos}
+                  setPos={setWindowPos}
+                  size={windowSize}
+                  setSize={setWindowSize}
+                  article={article}
+                  {...props}
+                />
+              );
             }}
           />
-          <Software render={() => (<div>404</div>)} />
+          <Software
+            render={(props) => { errWindow(props, () => (<Error404 />)) }}
+          />
         </Switch>
       </Desktop>
     </Layout>
   );
 }
 
+export default App;
 
+/*
 App.propTypes = {
   toggled: bool.isRequired
 };
@@ -54,4 +98,4 @@ function mapStateToProps(state) {
   return { toggled: state.osState.menuToggled };
 }
 
-export default connect(mapStateToProps)(App);
+export default connect(mapStateToProps)(App); */

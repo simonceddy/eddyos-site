@@ -1,13 +1,7 @@
 import React from 'react';
-import { connect } from 'react-redux';
 import MenuItem from './MenuItem';
-import { toggleMenu } from '../../actions/osStateActions';
 
-function Menu({ dispatch, toggled }) {
-  const toggler = () => {
-    dispatch(toggleMenu({ menuToggled: !toggled }));
-  };
-
+function Menu({ toggler }) {
   return (
     <div className="menu text-2xl flex flex-col text-center my-2 mx-auto">
       <MenuItem to="/text/about" onClick={toggler} exact>About</MenuItem>
@@ -19,6 +13,4 @@ function Menu({ dispatch, toggled }) {
   );
 }
 
-export default connect(state => ({
-  toggled: state.osState.menuToggled
-}))(Menu);
+export default Menu;

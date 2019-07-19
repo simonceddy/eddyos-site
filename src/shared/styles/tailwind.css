@@ -651,7 +651,6 @@ video {
 .exit-button {
   background-color: #18ba20;
   color: #000000;
-  margin: 0.25rem;
 }
 
 .exit-button:hover {

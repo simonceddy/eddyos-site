@@ -2,7 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import { BrowserRouter } from 'react-router-dom';
 import { Provider } from 'react-redux';
-import './index.css';
+import './shared/styles/index.css';
 import './shared/styles/tailwind.css';
 import 'react-grid-layout/css/styles.css';
 import 'react-resizable/css/styles.css';
@@ -10,12 +10,18 @@ import 'react-resizable/css/styles.css';
 import * as serviceWorker from './serviceWorker';
 
 import App from './components/App';
-import store from './shared/redux/configureStore';
+import store from './redux/configureStore';
+
+import useOs from './hooks/useOs';
+
+const { os } = useOs();
+
+window.eddyOS = os;
 
 ReactDOM.render(
   <Provider store={store}>
     <BrowserRouter>
-      <App />
+      <App os={os} />
     </BrowserRouter>
   </Provider>,
   document.getElementById('root')

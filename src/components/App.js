@@ -19,18 +19,6 @@ function App({ os }) {
     setToggled(!toggled);
   };
 
-  const errWindow = (props, callback) => (
-    <WrappedErrorBox
-      pos={windowPos}
-      setPos={setWindowPos}
-      size={windowSize}
-      setSize={setWindowSize}
-      {...props}
-    >
-      {callback()}
-    </WrappedErrorBox>
-  );
-
   return (
     <Layout
       toggled={toggled}
@@ -79,7 +67,16 @@ function App({ os }) {
             }}
           />
           <Software
-            render={(props) => { errWindow(props, () => (<Error404 />)) }}
+            render={() => (
+              <WrappedErrorBox
+                pos={windowPos}
+                setPos={setWindowPos}
+                size={windowSize}
+                setSize={setWindowSize}
+              >
+                <Error404 />
+              </WrappedErrorBox>
+            )}
           />
         </Switch>
       </Desktop>

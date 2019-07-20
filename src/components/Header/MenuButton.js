@@ -4,7 +4,7 @@ import { toggleMenu } from '../../os/reduxOs/actions/osActionCreators';
 
 function MenuButton({ setToggle }) {
   return (
-    <button type="button" className="menu-button text-3xl" onClick={setToggle}>
+    <button type="button" className="menu-button w-32 text-3xl" onClick={setToggle}>
       <span className="m-2">Menu</span>
     </button>
   );

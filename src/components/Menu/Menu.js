@@ -5,7 +5,7 @@ import { toggleMenu } from '../../os/reduxOs/actions/osActionCreators';
 
 function Menu({ setToggle }) {
   return (
-    <div className="menu text-2xl flex flex-col text-center my-2 mx-auto">
+    <div className="menu text-2xl flex flex-col items-center justify-center text-center my-2 mx-auto">
       <MenuItem to="/text/about" onClick={setToggle} exact>About</MenuItem>
       <MenuItem to="/text/services" onClick={setToggle} exact>Services</MenuItem>
       <MenuItem to="/text/code" onClick={setToggle} exact>Code</MenuItem>

@@ -6,8 +6,8 @@ html, body, #root {
 
 body {
   font-family: 'VT323', monospace;
-  /* background: black; */
-  background: white;
+  background: black;
+  /* background: white; */
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }

@@ -10,7 +10,7 @@
 }
 
 .menu-item {
-  @apply w-full;
+  @apply w-5/6;
 }
 
 .menu-button:hover, .menu-item:hover {

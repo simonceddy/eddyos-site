@@ -2,10 +2,11 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import { BrowserRouter } from 'react-router-dom';
 import { Provider } from 'react-redux';
-import './shared/styles/index.css';
-import './shared/styles/tailwind.css';
 import 'react-grid-layout/css/styles.css';
 import 'react-resizable/css/styles.css';
+import './shared/styles/scrollbar.css';
+import './shared/styles/index.css';
+import './shared/styles/tailwind.css';
 
 import * as serviceWorker from './serviceWorker';
 

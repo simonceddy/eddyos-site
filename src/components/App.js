@@ -7,7 +7,7 @@ import Software from './Software/Software';
 import ModalWrapper from '../shared/components/ModalWrapper';
 import MenuModal from './Menu/MenuModal';
 import TextEditor from './Software/TextEditor/TextEditor';
-import WrappedErrorBox from './Errors/WrappedErrorBox';
+// import WrappedErrorBox from './Errors/WrappedErrorBox';
 import Error404 from './Errors/404';
 
 function App({ toggled }) {
@@ -28,7 +28,7 @@ function App({ toggled }) {
           <Software
             path="/text/:page"
             exact
-            render={props => (<TextEditor editable articleKey={props.match.params.page} />)
+            render={props => (<TextEditor articleKey={props.match.params.page} />)
             }
           />
           <Software render={() => (<Error404 />)} />

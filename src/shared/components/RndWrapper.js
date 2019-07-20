@@ -1,19 +1,17 @@
 import React from 'react';
+import { connect } from 'react-redux';
 import { Rnd } from 'react-rnd';
 
 function RndWrapper({
-  pos = {},
+  dispatch,
+  x = 10,
+  y = 10,
   setPos,
+  height = 350,
+  width = 300,
   setSize,
-  size = {},
   children
 }) {
-  const x = pos.x || 10;
-  const y = pos.y || 10;
-
-  const width = size.width || 350;
-  const height = size.height || 300;
-
   return (
     <Rnd
       default={{
@@ -27,20 +25,16 @@ function RndWrapper({
       bounds="#desktop-container"
       dragHandleClassName="drag-handle"
       className="z-10"
-      onDragStop={(e, data) => {
-        // console.log(e, data);
-        setPos({ x: data.x, y: data.y });
-      }}
-      onResizeStop={(e, dir, ref) => {
-        setSize({
-          width: Number.parseInt(ref.style.width, 0),
-          height: Number.parseInt(ref.style.height, 0)
-        });
-      }}
+      onDragStop={(e, data) => dispatch(setPos(data.x, data.y))
+      }
+      onResizeStop={(e, dir, ref) => dispatch(setSize(
+        Number.parseInt(ref.style.width, 0),
+        Number.parseInt(ref.style.height, 0)
+      ))}
     >
       {children}
     </Rnd>
   );
 }
 
-export default RndWrapper;
+export default connect()(RndWrapper);

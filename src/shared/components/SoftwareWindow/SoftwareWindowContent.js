@@ -1,9 +1,9 @@
 import React from 'react';
 
-function SoftwareWindowContent(props) {
+function SoftwareWindowContent({ children, handler }) {
   return (
-    <div className="bg-black text-green text-xl p-1 whitespace-pre-line flex-1 cursor-text overflow-scroll">
-      {props.children}
+    <div onDoubleClick={handler} className="window-content bg-black text-green text-xl p-2 whitespace-pre-line flex-1 cursor-text overflow-scroll">
+      {children}
     </div>
   );
 }

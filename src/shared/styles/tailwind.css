@@ -606,7 +606,7 @@ video {
 
 .menu-button, .menu-item {
   background-color: #24f12e;
-  color: #000000;
+  color: #FFFFFF;
   margin: 0.5rem;
   border-width: 1px;
   border-color: #24f12e;
@@ -620,7 +620,7 @@ video {
 
 .menu-button:hover, .menu-item:hover {
   color: #24f12e;
-  background-color: #000000;
+  background-color: #FFFFFF;
 }
 
 .menu-button:active, .menu-item:active {
@@ -637,24 +637,24 @@ video {
 }
 
 .link:hover {
-  color: #000000;
+  color: #FFFFFF;
   background-color: #24f12e;
   text-decoration: none;
 }
 
 .link:active {
-  color: #000000;
+  color: #FFFFFF;
   background-color: #24f12e;
   text-decoration: underline;
 }
 
 .exit-button {
   background-color: #18ba20;
-  color: #000000;
+  color: #FFFFFF;
 }
 
 .exit-button:hover {
-  background-color: #000000;
+  background-color: #FFFFFF;
   color: #24f12e;
 }
 
@@ -728,7 +728,7 @@ video {
 }
 
 .bg-black {
-  background-color: #000000;
+  background-color: #FFFFFF;
 }
 
 .bg-green-light {
@@ -744,7 +744,7 @@ video {
 }
 
 .hover\:bg-black:hover {
-  background-color: #000000;
+  background-color: #FFFFFF;
 }
 
 .hover\:bg-green-light:hover {
@@ -760,7 +760,7 @@ video {
 }
 
 .focus\:bg-black:focus {
-  background-color: #000000;
+  background-color: #FFFFFF;
 }
 
 .focus\:bg-green-light:focus {
@@ -856,7 +856,7 @@ video {
 }
 
 .border-black {
-  border-color: #000000;
+  border-color: #FFFFFF;
 }
 
 .border-green-light {
@@ -872,7 +872,7 @@ video {
 }
 
 .hover\:border-black:hover {
-  border-color: #000000;
+  border-color: #FFFFFF;
 }
 
 .hover\:border-green-light:hover {
@@ -888,7 +888,7 @@ video {
 }
 
 .focus\:border-black:focus {
-  border-color: #000000;
+  border-color: #FFFFFF;
 }
 
 .focus\:border-green-light:focus {
@@ -3955,7 +3955,7 @@ video {
 }
 
 .text-black {
-  color: #000000;
+  color: #FFFFFF;
 }
 
 .text-green-light {
@@ -3971,7 +3971,7 @@ video {
 }
 
 .hover\:text-black:hover {
-  color: #000000;
+  color: #FFFFFF;
 }
 
 .hover\:text-green-light:hover {
@@ -3987,7 +3987,7 @@ video {
 }
 
 .focus\:text-black:focus {
-  color: #000000;
+  color: #FFFFFF;
 }
 
 .focus\:text-green-light:focus {
@@ -4475,7 +4475,7 @@ video {
   }
 
   .sm\:bg-black {
-    background-color: #000000;
+    background-color: #FFFFFF;
   }
 
   .sm\:bg-green-light {
@@ -4491,7 +4491,7 @@ video {
   }
 
   .sm\:hover\:bg-black:hover {
-    background-color: #000000;
+    background-color: #FFFFFF;
   }
 
   .sm\:hover\:bg-green-light:hover {
@@ -4507,7 +4507,7 @@ video {
   }
 
   .sm\:focus\:bg-black:focus {
-    background-color: #000000;
+    background-color: #FFFFFF;
   }
 
   .sm\:focus\:bg-green-light:focus {
@@ -4603,7 +4603,7 @@ video {
   }
 
   .sm\:border-black {
-    border-color: #000000;
+    border-color: #FFFFFF;
   }
 
   .sm\:border-green-light {
@@ -4619,7 +4619,7 @@ video {
   }
 
   .sm\:hover\:border-black:hover {
-    border-color: #000000;
+    border-color: #FFFFFF;
   }
 
   .sm\:hover\:border-green-light:hover {
@@ -4635,7 +4635,7 @@ video {
   }
 
   .sm\:focus\:border-black:focus {
-    border-color: #000000;
+    border-color: #FFFFFF;
   }
 
   .sm\:focus\:border-green-light:focus {
@@ -7702,7 +7702,7 @@ video {
   }
 
   .sm\:text-black {
-    color: #000000;
+    color: #FFFFFF;
   }
 
   .sm\:text-green-light {
@@ -7718,7 +7718,7 @@ video {
   }
 
   .sm\:hover\:text-black:hover {
-    color: #000000;
+    color: #FFFFFF;
   }
 
   .sm\:hover\:text-green-light:hover {
@@ -7734,7 +7734,7 @@ video {
   }
 
   .sm\:focus\:text-black:focus {
-    color: #000000;
+    color: #FFFFFF;
   }
 
   .sm\:focus\:text-green-light:focus {
@@ -8223,7 +8223,7 @@ video {
   }
 
   .md\:bg-black {
-    background-color: #000000;
+    background-color: #FFFFFF;
   }
 
   .md\:bg-green-light {
@@ -8239,7 +8239,7 @@ video {
   }
 
   .md\:hover\:bg-black:hover {
-    background-color: #000000;
+    background-color: #FFFFFF;
   }
 
   .md\:hover\:bg-green-light:hover {
@@ -8255,7 +8255,7 @@ video {
   }
 
   .md\:focus\:bg-black:focus {
-    background-color: #000000;
+    background-color: #FFFFFF;
   }
 
   .md\:focus\:bg-green-light:focus {
@@ -8351,7 +8351,7 @@ video {
   }
 
   .md\:border-black {
-    border-color: #000000;
+    border-color: #FFFFFF;
   }
 
   .md\:border-green-light {
@@ -8367,7 +8367,7 @@ video {
   }
 
   .md\:hover\:border-black:hover {
-    border-color: #000000;
+    border-color: #FFFFFF;
   }
 
   .md\:hover\:border-green-light:hover {
@@ -8383,7 +8383,7 @@ video {
   }
 
   .md\:focus\:border-black:focus {
-    border-color: #000000;
+    border-color: #FFFFFF;
   }
 
   .md\:focus\:border-green-light:focus {
@@ -11450,7 +11450,7 @@ video {
   }
 
   .md\:text-black {
-    color: #000000;
+    color: #FFFFFF;
   }
 
   .md\:text-green-light {
@@ -11466,7 +11466,7 @@ video {
   }
 
   .md\:hover\:text-black:hover {
-    color: #000000;
+    color: #FFFFFF;
   }
 
   .md\:hover\:text-green-light:hover {
@@ -11482,7 +11482,7 @@ video {
   }
 
   .md\:focus\:text-black:focus {
-    color: #000000;
+    color: #FFFFFF;
   }
 
   .md\:focus\:text-green-light:focus {
@@ -11971,7 +11971,7 @@ video {
   }
 
   .lg\:bg-black {
-    background-color: #000000;
+    background-color: #FFFFFF;
   }
 
   .lg\:bg-green-light {
@@ -11987,7 +11987,7 @@ video {
   }
 
   .lg\:hover\:bg-black:hover {
-    background-color: #000000;
+    background-color: #FFFFFF;
   }
 
   .lg\:hover\:bg-green-light:hover {
@@ -12003,7 +12003,7 @@ video {
   }
 
   .lg\:focus\:bg-black:focus {
-    background-color: #000000;
+    background-color: #FFFFFF;
   }
 
   .lg\:focus\:bg-green-light:focus {
@@ -12099,7 +12099,7 @@ video {
   }
 
   .lg\:border-black {
-    border-color: #000000;
+    border-color: #FFFFFF;
   }
 
   .lg\:border-green-light {
@@ -12115,7 +12115,7 @@ video {
   }
 
   .lg\:hover\:border-black:hover {
-    border-color: #000000;
+    border-color: #FFFFFF;
   }
 
   .lg\:hover\:border-green-light:hover {
@@ -12131,7 +12131,7 @@ video {
   }
 
   .lg\:focus\:border-black:focus {
-    border-color: #000000;
+    border-color: #FFFFFF;
   }
 
   .lg\:focus\:border-green-light:focus {
@@ -15198,7 +15198,7 @@ video {
   }
 
   .lg\:text-black {
-    color: #000000;
+    color: #FFFFFF;
   }
 
   .lg\:text-green-light {
@@ -15214,7 +15214,7 @@ video {
   }
 
   .lg\:hover\:text-black:hover {
-    color: #000000;
+    color: #FFFFFF;
   }
 
   .lg\:hover\:text-green-light:hover {
@@ -15230,7 +15230,7 @@ video {
   }
 
   .lg\:focus\:text-black:focus {
-    color: #000000;
+    color: #FFFFFF;
   }
 
   .lg\:focus\:text-green-light:focus {
@@ -15719,7 +15719,7 @@ video {
   }
 
   .xl\:bg-black {
-    background-color: #000000;
+    background-color: #FFFFFF;
   }
 
   .xl\:bg-green-light {
@@ -15735,7 +15735,7 @@ video {
   }
 
   .xl\:hover\:bg-black:hover {
-    background-color: #000000;
+    background-color: #FFFFFF;
   }
 
   .xl\:hover\:bg-green-light:hover {
@@ -15751,7 +15751,7 @@ video {
   }
 
   .xl\:focus\:bg-black:focus {
-    background-color: #000000;
+    background-color: #FFFFFF;
   }
 
   .xl\:focus\:bg-green-light:focus {
@@ -15847,7 +15847,7 @@ video {
   }
 
   .xl\:border-black {
-    border-color: #000000;
+    border-color: #FFFFFF;
   }
 
   .xl\:border-green-light {
@@ -15863,7 +15863,7 @@ video {
   }
 
   .xl\:hover\:border-black:hover {
-    border-color: #000000;
+    border-color: #FFFFFF;
   }
 
   .xl\:hover\:border-green-light:hover {
@@ -15879,7 +15879,7 @@ video {
   }
 
   .xl\:focus\:border-black:focus {
-    border-color: #000000;
+    border-color: #FFFFFF;
   }
 
   .xl\:focus\:border-green-light:focus {
@@ -18946,7 +18946,7 @@ video {
   }
 
   .xl\:text-black {
-    color: #000000;
+    color: #FFFFFF;
   }
 
   .xl\:text-green-light {
@@ -18962,7 +18962,7 @@ video {
   }
 
   .xl\:hover\:text-black:hover {
-    color: #000000;
+    color: #FFFFFF;
   }
 
   .xl\:hover\:text-green-light:hover {
@@ -18978,7 +18978,7 @@ video {
   }
 
   .xl\:focus\:text-black:focus {
-    color: #000000;
+    color: #FFFFFF;
   }
 
   .xl\:focus\:text-green-light:focus {

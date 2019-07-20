@@ -1,10 +1,10 @@
 import React from 'react';
 import Menu from './Menu';
 
-function MenuModal({ toggler }) {
+function MenuModal() {
   return (
     <div className="flex flex-col items-center justify-center">
-      <Menu toggler={toggler} />
+      <Menu />
     </div>
   );
 }

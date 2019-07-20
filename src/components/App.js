@@ -1,5 +1,6 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { Switch } from 'react-router-dom';
+import { connect } from 'react-redux';
 import Desktop from './Desktop';
 import Layout from './Layout';
 import Software from './Software/Software';
@@ -9,25 +10,13 @@ import TextEditor from './Software/TextEditor/TextEditor';
 import WrappedErrorBox from './Errors/WrappedErrorBox';
 import Error404 from './Errors/404';
 
-function App({ os }) {
-  const [toggled, setToggled] = useState(false);
-
-  const [windowPos, setWindowPos] = useState({ x: 20, y: 20 });
-  const [windowSize, setWindowSize] = useState({ width: 360, height: 320 });
-
-  const toggler = () => {
-    setToggled(!toggled);
-  };
-
+function App({ toggled }) {
   return (
-    <Layout
-      toggled={toggled}
-      toggler={toggler}
-    >
+    <Layout>
       <Desktop>
         {toggled ? (
-          <ModalWrapper toggled={toggled} toggler={toggler}>
-            <MenuModal toggler={toggler} />
+          <ModalWrapper>
+            <MenuModal />
           </ModalWrapper>
         ) : null}
         <Switch>
@@ -39,60 +28,20 @@ function App({ os }) {
           <Software
             path="/text/:page"
             exact
-            render={(props) => {
-              // get article
-              const article = os.fs.load(`articles.${props.match.params.page}`);
-              if (!article) {
-                return (
-                  <WrappedErrorBox
-                    pos={windowPos}
-                    setPos={setWindowPos}
-                    size={windowSize}
-                    setSize={setWindowSize}
-                  >
-                    <Error404 />
-                  </WrappedErrorBox>
-                );
-              }
-              return (
-                <TextEditor
-                  pos={windowPos}
-                  setPos={setWindowPos}
-                  size={windowSize}
-                  setSize={setWindowSize}
-                  article={article}
-                  {...props}
-                />
-              );
-            }}
+            render={props => (<TextEditor editable articleKey={props.match.params.page} />)
+            }
           />
-          <Software
-            render={() => (
-              <WrappedErrorBox
-                pos={windowPos}
-                setPos={setWindowPos}
-                size={windowSize}
-                setSize={setWindowSize}
-              >
-                <Error404 />
-              </WrappedErrorBox>
-            )}
-          />
+          <Software render={() => (<Error404 />)} />
         </Switch>
       </Desktop>
     </Layout>
   );
 }
 
-export default App;
-
-/*
-App.propTypes = {
-  toggled: bool.isRequired
-};
+// export default App;
 
 function mapStateToProps(state) {
-  return { toggled: state.osState.menuToggled };
+  return { toggled: state.os.menuToggled };
 }
 
-export default connect(mapStateToProps)(App); */
+export default connect(mapStateToProps)(App);

@@ -1,10 +1,12 @@
 import React from 'react';
 import Modal from 'react-responsive-modal';
+import { connect } from 'react-redux';
 import { func, bool } from 'prop-types';
+import { toggleMenu } from '../../os/reduxOs/actions/osActionCreators';
 
 function ModalWrapper({
   toggled,
-  toggler,
+  setToggle,
   children,
   classNames = {
     modal: ['bg-black']
@@ -15,7 +17,8 @@ function ModalWrapper({
       classNames={classNames}
       center
       open={toggled}
-      onClose={toggler}
+      onClose={setToggle}
+      showCloseIcon={false}
     >
       {children}
     </Modal>
@@ -24,7 +27,15 @@ function ModalWrapper({
 
 ModalWrapper.propTypes = {
   toggled: bool.isRequired,
-  toggler: func.isRequired,
+  setToggle: func.isRequired,
 };
 
-export default ModalWrapper;
+const mapStateToProps = state => ({
+  toggled: state.os.menuToggled
+});
+
+const mapDispatchToProps = dispatch => ({
+  setToggle: () => dispatch(toggleMenu())
+});
+
+export default connect(mapStateToProps, mapDispatchToProps)(ModalWrapper);

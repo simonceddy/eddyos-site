@@ -1,9 +1,15 @@
 import React from 'react';
 import RndWrapper from '../../shared/components/RndWrapper';
 
-function WrappedErrorBox({ children }) {
+function WrappedErrorBox({
+  pos,
+  size,
+  setPos,
+  setSize,
+  children
+}) {
   return (
-    <RndWrapper>
+    <RndWrapper pos={pos} size={size} setPos={setPos} setSize={setSize}>
       {children}
     </RndWrapper>
   );

@@ -10,7 +10,6 @@ import 'react-resizable/css/styles.css';
 import * as serviceWorker from './serviceWorker';
 
 import App from './components/App';
-import store from './redux/configureStore';
 
 import useOs from './hooks/useOs';
 
@@ -18,8 +17,10 @@ const { os } = useOs();
 
 window.eddyOS = os;
 
+console.log(os);
+
 ReactDOM.render(
-  <Provider store={store}>
+  <Provider store={os.getStore()}>
     <BrowserRouter>
       <App os={os} />
     </BrowserRouter>

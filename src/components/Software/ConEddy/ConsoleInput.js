@@ -10,10 +10,14 @@ function ConsoleInput({ input, inputHandler, handleEnter }) {
           <input
             name="cli-input"
             id="cli-input"
-            className="ml-1 cli-input bg-black text-green flex-1"
+            className="ml-1 text-input flex-1"
             type="text"
             value={input}
             onChange={inputHandler}
+            autoComplete="off"
+            autoCorrect="off"
+            autoCapitalize="off"
+            spellCheck={false}
           />
         </label>
       </form>

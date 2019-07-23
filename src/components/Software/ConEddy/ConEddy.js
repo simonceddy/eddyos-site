@@ -1,8 +1,10 @@
 import React, { useState } from 'react';
 import ConsoleOutput from './ConsoleOutput';
 import ConsoleInput from './ConsoleInput';
+import inputString from '../../../os/cli/inputString';
 
-function ConEddy() {
+// eslint-disable-next-line no-unused-vars
+function ConEddy({ os }) {
   const [input, setInput] = useState('');
 
   const [outputs, setOutputs] = useState([]);
@@ -18,6 +20,10 @@ function ConEddy() {
           // const val = e.target.children[0].value;
           // console.log(e.target.children);
           e.preventDefault();
+
+          const command = inputString(input);
+          const output = os.commandBus().execute(command);
+          console.log(output);
           outputs.push(input);
           setOutputs(outputs);
           setInput('');

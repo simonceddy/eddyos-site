@@ -681,6 +681,12 @@ video {
   }
 }
 
+.text-input {
+  caret-color: #24f12e;
+  background-color: #000000;
+  color: #24f12e;
+}
+
 .container {
   width: 100%;
 }

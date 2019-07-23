@@ -7,11 +7,12 @@ import { setPos, setSize } from '../../../os/actions/textActionCreators';
 import SoftwareWindowTitle from '../../../shared/components/SoftwareWindow/SoftwareWindowTitle';
 import ConEddy from './ConEddy';
 
-function TextEditor({
+function ConWrapper({
   width,
   height,
   x,
-  y
+  y,
+  os
 }) {
   return (
     <SoftwareWrapper
@@ -22,7 +23,7 @@ function TextEditor({
     >
       <SoftwareWindow>
         <SoftwareWindowTitle>conEddy v0.0.1</SoftwareWindowTitle>
-        <ConEddy />
+        <ConEddy os={os} />
       </SoftwareWindow>
     </SoftwareWrapper>
   );
@@ -36,4 +37,4 @@ const mapStateToProps = (state, ownProps) => ({
   y: state.windows.text.y,
 });
 
-export default connect(mapStateToProps)(TextEditor);
+export default connect(mapStateToProps)(ConWrapper);

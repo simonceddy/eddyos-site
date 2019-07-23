@@ -55,5 +55,10 @@
   }
 }
 
+.text-input {
+  caret-color: #24f12e;
+  @apply bg-black text-green;
+}
+
 @tailwind components;
 @tailwind utilities;

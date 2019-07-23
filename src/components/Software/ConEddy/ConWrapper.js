@@ -1,30 +1,18 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { connect } from 'react-redux';
 import SoftwareWindow from '../../../shared/components/SoftwareWindow/SoftwareWindow';
 import { getArticle } from '../../../os/selectors/textSelectors';
 import SoftwareWrapper from '../../../shared/components/SoftwareWrapper';
 import { setPos, setSize } from '../../../os/actions/textActionCreators';
 import SoftwareWindowTitle from '../../../shared/components/SoftwareWindow/SoftwareWindowTitle';
-import SoftwareWindowContent from '../../../shared/components/SoftwareWindow/SoftwareWindowContent';
-import EditBox from './EditBox';
+import ConEddy from './ConEddy';
 
 function TextEditor({
-  editable = false,
-  articleKey,
-  article = {},
   width,
   height,
   x,
   y
 }) {
-  const [editMode, setEditMode] = useState(false);
-
-  const toggleEditMode = () => {
-    if (editable) {
-      setEditMode(!editMode);
-    }
-  };
-
   return (
     <SoftwareWrapper
       pos={{ x, y }}
@@ -32,18 +20,9 @@ function TextEditor({
       size={{ height, width }}
       setSize={setSize}
     >
-      <SoftwareWindow articleKey={articleKey}>
-        <SoftwareWindowTitle>{article.title}</SoftwareWindowTitle>
-        {editMode
-          ? (
-            <EditBox toggleEditMode={toggleEditMode} val={article.body} />
-          )
-          : (
-            <SoftwareWindowContent handler={toggleEditMode}>
-              {article.body}
-            </SoftwareWindowContent>
-          )
-        }
+      <SoftwareWindow>
+        <SoftwareWindowTitle>conEddy v0.0.1</SoftwareWindowTitle>
+        <ConEddy />
       </SoftwareWindow>
     </SoftwareWrapper>
   );

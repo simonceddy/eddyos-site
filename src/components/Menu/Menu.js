@@ -1,7 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import MenuItem from './MenuItem';
-import { toggleMenu } from '../../os/reduxOs/actions/osActionCreators';
+import { toggleMenu } from '../../os/actions/osActionCreators';
 
 function Menu({ setToggle }) {
   return (

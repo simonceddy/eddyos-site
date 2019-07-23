@@ -1,5 +1,5 @@
 import toArray from 'lodash/toArray';
-import articles from '../../../storage/articles';
+import articles from '../../storage/articles';
 import { getArticle } from '../selectors/textSelectors';
 import { SET_ARTICLE_CONTENT, ADD_ARTICLE } from '../types/articleActionTypes';
 

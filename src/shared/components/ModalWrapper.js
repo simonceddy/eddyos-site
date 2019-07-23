@@ -2,7 +2,7 @@ import React from 'react';
 import Modal from 'react-responsive-modal';
 import { connect } from 'react-redux';
 import { func, bool } from 'prop-types';
-import { toggleMenu } from '../../os/reduxOs/actions/osActionCreators';
+import { toggleMenu } from '../../os/actions/osActionCreators';
 
 function ModalWrapper({
   toggled,

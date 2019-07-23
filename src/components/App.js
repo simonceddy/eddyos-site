@@ -9,6 +9,7 @@ import MenuModal from './Menu/MenuModal';
 import TextEditor from './Software/TextEditor/TextEditor';
 // import WrappedErrorBox from './Errors/WrappedErrorBox';
 import Error404 from './Errors/404';
+import ConWrapper from './Software/ConEddy/ConWrapper';
 
 function App({ toggled }) {
   return (
@@ -30,6 +31,11 @@ function App({ toggled }) {
             exact
             render={props => (<TextEditor articleKey={props.match.params.page} />)
             }
+          />
+          <Software
+            path="/cli"
+            exact
+            render={(() => (<ConWrapper />))}
           />
           <Software render={() => (<Error404 />)} />
         </Switch>

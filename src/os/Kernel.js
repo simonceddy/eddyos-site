@@ -1,17 +1,25 @@
-import Fs from './Fs';
-import ReduxKernel from './reduxOs/Kernel';
+import { createStore } from 'redux';
+// import Fs from './Fs';
+import rootReducer from './reducers';
+import WindowManager from './Windows';
 
 // eslint-disable-next-line no-unused-vars
 function Kernel(options) {
-  const booted = false;
+  this.booted = false;
 
-  this.reduxKernel = new ReduxKernel();
+  // this.fs = new Fs();
 
-  this.fs = new Fs();
+  this.windows = new WindowManager();
 
-  this.booted = () => booted;
+  this.getStore = () => {
+    if (this.store === undefined) {
+      this.store = createStore(rootReducer);
+    }
 
-  this.getStore = () => this.reduxKernel.getStore();
+    return this.store;
+  };
+
+  this.booted = true;
 }
 
 export default Kernel;

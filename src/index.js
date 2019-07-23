@@ -11,10 +11,9 @@ import './shared/styles/tailwind.css';
 import * as serviceWorker from './serviceWorker';
 
 import App from './components/App';
+import Kernel from './os/Kernel';
 
-import useOs from './hooks/useOs';
-
-const { os } = useOs();
+const os = new Kernel();
 
 window.eddyOS = os;
 

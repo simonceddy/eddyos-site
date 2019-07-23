@@ -13,7 +13,15 @@ function SoftwareWrapper({
   children
 }) {
   return (
-    <RndWrapper x={x} y={y} width={width} height={height} setPos={setPos} setSize={setSize}>
+    <RndWrapper
+      draggable
+      x={x}
+      y={y}
+      width={width}
+      height={height}
+      setPos={setPos}
+      setSize={setSize}
+    >
       {children}
     </RndWrapper>
   );

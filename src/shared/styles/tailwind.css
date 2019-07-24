@@ -687,6 +687,10 @@ video {
   color: #24f12e;
 }
 
+.app-layout {
+  background: rgba(0, 0, 0, 0);
+}
+
 .container {
   width: 100%;
 }

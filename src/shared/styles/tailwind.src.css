@@ -60,5 +60,9 @@
   @apply bg-black text-green;
 }
 
+.app-layout {
+  background: rgba(0, 0, 0, 0);
+}
+
 @tailwind components;
 @tailwind utilities;

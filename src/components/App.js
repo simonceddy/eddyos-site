@@ -15,7 +15,7 @@ import ConWrapper from './Software/ConEddy/ConWrapper';
 function App({ toggled, os }) {
   return (
     <Layout>
-      <HotKeys keyMap={os.keyMap} className="flex flex-col flex-1">
+      <HotKeys keyMap={os.keyMap} handlers={os.keyHandlers} className="flex flex-col flex-1">
         <Desktop>
           {toggled ? (
             <ModalWrapper>

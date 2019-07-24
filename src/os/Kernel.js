@@ -2,18 +2,20 @@ import { createStore } from 'redux';
 // import Fs from './Fs';
 import rootReducer from './reducers';
 import WindowManager from './Windows';
-import CommandBus from './cli/commandBus';
+import CommandBus from './cli/CommandBus';
 
 // eslint-disable-next-line no-unused-vars
 function Kernel(options) {
   this.booted = false;
 
   this.keyMap = {
-    toggleCli: ['c', 'C']
+    TOGGLE_CLI: ['c', 'C']
   };
 
   this.keyHandlers = {
-    toggleCliHandler: () => {}
+    TOGGLE_CLI: (e) => {
+      console.log(e.target);
+    }
   };
 
   // this.fs = new Fs();

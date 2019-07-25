@@ -3,7 +3,7 @@ import { MdClose as Close } from 'react-icons/md';
 
 function ExitButton() {
   return (
-    <div className="exit-button">
+    <div>
       <Close />
     </div>
   );

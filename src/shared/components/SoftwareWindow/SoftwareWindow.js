@@ -1,10 +1,24 @@
 import React from 'react';
+import style from 'styled-components';
+import theme from 'styled-theming';
+import SoftwareWindowTitle from './SoftwareWindowTitle';
+import { darkPrimaryColourMap } from '../../themes';
+import SoftwareWindowContent from './SoftwareWindowContent';
 
-function SoftwareWindow(props) {
+const darkPrimary = theme('mode', darkPrimaryColourMap);
+
+const StyledSoftwareWindow = style.div`
+  border-color: ${darkPrimary};
+`;
+
+function SoftwareWindow({ children, title }) {
   return (
-    <div className="software-window bg-green-dark text-black border border-green-dark border-2 w-full h-full flex flex-col">
-      {props.children}
-    </div>
+    <StyledSoftwareWindow className="software-window border border-4 w-full h-full flex flex-col">
+      <SoftwareWindowTitle>{title}</SoftwareWindowTitle>
+      <SoftwareWindowContent>
+        {children}
+      </SoftwareWindowContent>
+    </StyledSoftwareWindow>
   );
 }
 

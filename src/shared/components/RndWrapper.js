@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 import { Rnd } from 'react-rnd';
 
 function RndWrapper({
-  dispatch,
+  // dispatch,
   x = 10,
   y = 10,
   setPos,
@@ -25,12 +25,12 @@ function RndWrapper({
       bounds="#desktop-container"
       dragHandleClassName="drag-handle"
       className="z-10"
-      onDragStop={(e, data) => dispatch(setPos(data.x, data.y))
+      onDragStop={(e, data) => setPos({ x: data.x, y: data.y })
       }
-      onResizeStop={(e, dir, ref) => dispatch(setSize(
-        Number.parseInt(ref.style.width, 0),
-        Number.parseInt(ref.style.height, 0)
-      ))}
+      onResizeStop={(e, dir, ref) => setSize({
+        width: Number.parseInt(ref.style.width, 0),
+        height: Number.parseInt(ref.style.height, 0)
+      })}
     >
       {children}
     </Rnd>

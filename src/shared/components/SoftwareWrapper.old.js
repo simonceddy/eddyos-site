@@ -1,10 +1,13 @@
 import React from 'react';
+import { connect } from 'react-redux';
 // import SoftwareWindow from '../../../shared/components/SoftwareWindow/SoftwareWindow';
 import RndWrapper from './RndWrapper';
 
 function SoftwareWrapper({
-  pos,
-  size,
+  x,
+  y,
+  height,
+  width,
   setPos,
   setSize,
   children
@@ -12,10 +15,10 @@ function SoftwareWrapper({
   return (
     <RndWrapper
       draggable
-      x={pos.x}
-      y={pos.y}
-      width={size.width}
-      height={size.height}
+      x={x}
+      y={y}
+      width={width}
+      height={height}
       setPos={setPos}
       setSize={setSize}
     >
@@ -24,4 +27,4 @@ function SoftwareWrapper({
   );
 }
 
-export default SoftwareWrapper;
+export default connect()(SoftwareWrapper);

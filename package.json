@@ -8,9 +8,11 @@
     "prop-types": "^15.7.2",
     "react": "^16.8.6",
     "react-aria-modal": "^4.0.0",
+    "react-cookie": "^4.0.1",
     "react-dom": "^16.8.6",
     "react-draggable": "^3.3.0",
     "react-grid-layout": "^0.16.6",
+    "react-helmet": "^5.2.1",
     "react-hotkeys": "^2.0.0",
     "react-icons": "^3.7.0",
     "react-perfect-scrollbar": "^1.5.3",
@@ -25,6 +27,7 @@
     "redux-starter-kit": "^0.6.2",
     "redux-thunk": "^2.3.0",
     "styled-components": "^5.0.0-beta.8",
+    "styled-theming": "^2.2.0",
     "tailwindcss": "^1.0.5"
   },
   "scripts": {

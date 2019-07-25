@@ -14,13 +14,19 @@ const StyledSoftwareWindowTitle = style.div`
 `;
 
 
-function SoftwareWindowTitle({ children }) {
+function SoftwareWindowTitle({ children, noClose = false }) {
   return (
     <StyledSoftwareWindowTitle className="drag-handle text-2xl flex flex-row justify-between items-center p-1 bg-green-dark cursor-move">
       <div className="flex-1">{children}</div>
-      <div className="items-center flex flex-row m-1">
-        <Link to="/"><ExitButton /></Link>
-      </div>
+      {
+        noClose === true
+          ? null
+          : (
+            <div className="items-center flex flex-row m-1">
+              <Link to="/"><ExitButton /></Link>
+            </div>
+          )
+      }
     </StyledSoftwareWindowTitle>
   );
 }

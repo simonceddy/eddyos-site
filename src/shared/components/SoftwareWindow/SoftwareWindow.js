@@ -11,10 +11,10 @@ const StyledSoftwareWindow = style.div`
   border-color: ${darkPrimary};
 `;
 
-function SoftwareWindow({ children, title }) {
+function SoftwareWindow({ children, title, noClose = false }) {
   return (
     <StyledSoftwareWindow className="software-window border border-4 w-full h-full flex flex-col">
-      <SoftwareWindowTitle>{title}</SoftwareWindowTitle>
+      <SoftwareWindowTitle noClose={noClose}>{title}</SoftwareWindowTitle>
       <SoftwareWindowContent>
         {children}
       </SoftwareWindowContent>

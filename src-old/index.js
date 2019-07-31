@@ -1,7 +1,5 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { BrowserRouter } from 'react-router-dom';
-import { Provider } from 'react-redux';
 import { CookiesProvider } from 'react-cookie';
 import 'react-grid-layout/css/styles.css';
 import 'react-resizable/css/styles.css';
@@ -14,20 +12,17 @@ import * as serviceWorker from './serviceWorker';
 // import App from './components/App';
 import App from './components/Os';
 import Kernel from './os/Kernel';
+import Bootstrapper from './components/Os/Bootstrapper';
 
 const os = new Kernel();
-
-window.eddyOS = os;
 
 // console.log(os);
 
 ReactDOM.render(
   <CookiesProvider>
-    <Provider store={os.getStore()}>
-      <BrowserRouter>
-        <App os={os} />
-      </BrowserRouter>
-    </Provider>
+    <Bootstrapper>
+      <App os={os} />
+    </Bootstrapper>
   </CookiesProvider>,
   document.getElementById('root')
 );

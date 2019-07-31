@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+// import { Link } from 'react-router-dom';
 import style from 'styled-components';
 import theme from 'styled-theming';
 import ExitButton from '../ExitButton/ExitButton';
@@ -14,7 +14,7 @@ const StyledSoftwareWindowTitle = style.div`
 `;
 
 
-function SoftwareWindowTitle({ children, noClose = false }) {
+function SoftwareWindowTitle({ children, noClose = false, onClose }) {
   return (
     <StyledSoftwareWindowTitle className="drag-handle text-2xl flex flex-row justify-between items-center p-1 bg-green-dark cursor-move">
       <div className="flex-1">{children}</div>
@@ -23,7 +23,7 @@ function SoftwareWindowTitle({ children, noClose = false }) {
           ? null
           : (
             <div className="items-center flex flex-row m-1">
-              <Link to="/"><ExitButton /></Link>
+              <ExitButton onClick={onClose} />
             </div>
           )
       }

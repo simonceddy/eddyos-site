@@ -1,5 +1,4 @@
 import React from 'react';
-import { connect } from 'react-redux';
 import { Rnd } from 'react-rnd';
 
 function RndWrapper({
@@ -24,7 +23,6 @@ function RndWrapper({
       minHeight={90}
       bounds="#desktop-container"
       dragHandleClassName="drag-handle"
-      className="z-10"
       onDragStop={(e, data) => setPos({ x: data.x, y: data.y })
       }
       onResizeStop={(e, dir, ref) => setSize({
@@ -37,4 +35,4 @@ function RndWrapper({
   );
 }
 
-export default connect()(RndWrapper);
+export default RndWrapper;

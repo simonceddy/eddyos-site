@@ -11,6 +11,12 @@ const StyledMenuButton = style.button`
   border-color: ${primary};
   color: ${primary};
   background-color: ${secondary};
+
+  :hover {
+    border-color: ${secondary};
+    color: ${secondary};
+    background-color: ${primary};
+  }
 `;
 
 function MenuButton({ menuToggle }) {

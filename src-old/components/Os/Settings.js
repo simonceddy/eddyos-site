@@ -13,12 +13,6 @@ const SelectWrapper = style.select`
   border: solid ${primary};
 `;
 
-/* const FinishedButton = style.button`
-  background-color: ${secondary};
-  color: ${primary};
-  border: solid thin ${primary};
-`; */
-
 
 function Settings({ themeMode, themeHandler }) {
   let lastId = 0;
@@ -45,21 +39,7 @@ function Settings({ themeMode, themeHandler }) {
             })}
           </SelectWrapper>
         </div>
-        <div>Placeholder</div>
-        <div>Placeholder</div>
-        <div>Placeholder</div>
-        <div>Placeholder</div>
-        <div>Placeholder</div>
-        <div>Placeholder</div>
-        <div>Placeholder</div>
-        <div>Placeholder</div>
-        <div>Placeholder</div>
-        <div>Placeholder</div>
-        <div>Placeholder</div>
-        <div>Placeholder</div>
-        <div>Placeholder</div>
       </div>
-      {/* <FinishedButton type="button" onClick={toggleSettings}>Finished!</FinishedButton> */}
     </div>
   );
 }

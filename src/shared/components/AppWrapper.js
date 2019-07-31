@@ -37,8 +37,16 @@ function AppWrapper({ windowHandlers, children, title }) {
         height: Number.parseInt(ref.style.height, 0)
       })}
     >
-      <TitleBar className="drag-handle">{title}</TitleBar>
-      {children}
+      <div className="w-full h-full bg-theme-primary-b text-theme-secondary flex flex-col">
+        <TitleBar
+          className="drag-handle bg-theme-primary-b"
+        >
+          {title}
+        </TitleBar>
+        <div className="flex-1 bg-theme-secondary border border-theme-primary-b text-theme-primary">
+          {children}
+        </div>
+      </div>
     </Rnd>
   );
 }

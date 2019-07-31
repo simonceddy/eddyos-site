@@ -29,6 +29,10 @@ function loadGlobalStyles(mode) {
     .bg-theme-primary-b {
       background-color: ${primaryB};
     }
+    
+    .bg-theme-secondary {
+      background-color: ${secondary};
+    }
   
     .text-theme-primary {
       color: ${primary};

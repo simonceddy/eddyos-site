@@ -21,5 +21,6 @@ code {
 }
 
 .underlay-logo {
-  color: #585858;
+  color: #34cfe4;
+  background-color: linear-gradient(to bottom, #f8fcc5, rgb(255, 237, 157))
 }

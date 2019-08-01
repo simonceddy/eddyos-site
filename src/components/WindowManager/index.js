@@ -11,7 +11,7 @@ function WindowManager({ kernel }) {
 
   return (
     <div>
-      {windows.map(app => (
+      {windows.map(app => (app.toggled ? (
         <AppWrapper
           key={app.id}
           title="Text"
@@ -20,7 +20,7 @@ function WindowManager({ kernel }) {
         >
           {app.name}
         </AppWrapper>
-      ))}
+      ) : null))}
     </div>
   );
 }

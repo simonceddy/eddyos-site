@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { Router } from 'react-router-dom';
 import { CookiesProvider, useCookies } from 'react-cookie';
+import { ThemeProvider } from 'styled-components';
 import useWindows from '../hooks/useWindows';
 import history from '../createHistory';
 
@@ -35,9 +36,11 @@ function Bootloader({ children, kernel }) {
   return (
     <Router history={history}>
       <CookiesProvider>
-        <div className="w-full h-full">
-          {children}
-        </div>
+        <ThemeProvider theme={{ mode: themeMode }}>
+          <div className="w-full h-full">
+            {children}
+          </div>
+        </ThemeProvider>
       </CookiesProvider>
     </Router>
   );

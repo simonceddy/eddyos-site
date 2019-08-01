@@ -26,6 +26,8 @@ export default function Kernel() {
     switch (binding) {
       case 'settingsWindow':
         return this.desktop.getWindowHandlers('settings');
+      case 'textWindow':
+        return this.desktop.getWindowHandlers('text');
       default:
         return bindings[binding] || false;
     }

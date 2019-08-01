@@ -1,14 +1,35 @@
 import React from 'react';
 import styled from 'styled-components';
+import theme from 'styled-theming';
 import { Rnd } from 'react-rnd';
 import { string } from 'prop-types';
+import ExitButton from './ExitButton';
+import { colourMaps } from '../../themes';
 
-const TitleBar = styled.div`
+const secondary = theme('mode', colourMaps.secondary);
+const primary = theme('mode', colourMaps.primary);
+const primaryB = theme('mode', colourMaps.primaryB);
 
+
+const StyledWindow = styled.div`
+  color: ${secondary};
+  background-color: ${primaryB};
 `;
 
-function AppWrapper({ windowHandlers, children, title }) {
-  console.log(windowHandlers);
+const StyledContent = styled.div`
+  font-size: 1.2rem;
+  color: ${primary};
+  background-color: ${secondary};
+  border-color: ${primaryB};
+`;
+
+function AppWrapper({
+  windowHandlers,
+  children,
+  title,
+  onClose
+}) {
+  // console.log(windowHandlers);
   if (typeof windowHandlers !== 'object') return null;
 
   const {
@@ -37,16 +58,17 @@ function AppWrapper({ windowHandlers, children, title }) {
         height: Number.parseInt(ref.style.height, 0)
       })}
     >
-      <div className="w-full h-full bg-theme-primary-b text-theme-secondary flex flex-col">
-        <TitleBar
-          className="drag-handle bg-theme-primary-b"
+      <StyledWindow className="w-full h-full flex flex-col">
+        <div
+          className="drag-handle text-2xl px-2 cursor-move flex flex-row justify-between items-center"
         >
-          {title}
-        </TitleBar>
-        <div className="flex-1 bg-theme-secondary border border-theme-primary-b text-theme-primary">
-          {children}
+          <span>{title}</span>
+          <ExitButton handler={onClose} />
         </div>
-      </div>
+        <StyledContent className="flex-1 border p-2">
+          {children}
+        </StyledContent>
+      </StyledWindow>
     </Rnd>
   );
 }

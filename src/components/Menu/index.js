@@ -1,7 +1,13 @@
 import React from 'react';
 import styled from 'styled-components';
-import MenuItem from './MenuItem';
+import theme from 'styled-theming';
+import MenuItemLg from './MenuItemLg';
 import MenuButton from './MenuButton';
+import MenuItemSm from './MenuItemSm';
+import { colourMaps } from '../../themes';
+
+const primary = theme('mode', colourMaps.primary);
+const primaryB = theme('mode', colourMaps.primaryB);
 
 const MenuWrapper = styled.div`
   background: none;
@@ -9,7 +15,6 @@ const MenuWrapper = styled.div`
   .os-menu {
     display: none;
     visibility: hidden;
-    font-size: 1.3rem;
     position: absolute;
     opacity: 0;
     z-index: 10;
@@ -24,18 +29,25 @@ const MenuWrapper = styled.div`
   }
 `;
 
+const MenuBox = styled.div`
+  border-color: ${primary};
+  background-color: ${primaryB};
+`;
+
 function Menu() {
   return (
     <MenuWrapper>
-      <div
-        className="os-menu flex-col bg-theme-primary-b border border-theme-primary p-2"
+      <MenuBox
+        className="os-menu flex-col border"
       >
-        <MenuItem to="/">Home</MenuItem>
-        <MenuItem to="/">About</MenuItem>
-        <MenuItem to="/">Home</MenuItem>
-        <MenuItem to="/settings">Settings</MenuItem>
-        Testing
-      </div>
+        <MenuItemLg to="/">Home</MenuItemLg>
+        <MenuItemLg to="/text/about">About</MenuItemLg>
+        <MenuItemLg to="/">Home</MenuItemLg>
+        <MenuItemLg to="/settings">Settings</MenuItemLg>
+        <div className="flex flex-row">
+          <MenuItemSm to="/cookie-policy">Cookie Policy</MenuItemSm>
+        </div>
+      </MenuBox>
       <MenuButton />
     </MenuWrapper>
   );

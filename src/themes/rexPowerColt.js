@@ -3,8 +3,8 @@ export default {
   primaryA: '#24f12e',
   primaryB: '#6cf0d3',
   primaryC: '#ff77dd9f',
-  secondary: 'black',
+  secondary: '#3d0944',
   text: null,
   heading: null,
-  menuButton: '#6cf0d3',
+  menuButton: '#ff77dd',
 };

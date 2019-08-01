@@ -1,12 +1,12 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
 
-function MenuItem({ children, to }) {
+function MenuItemSm({ children, to }) {
   return (
-    <NavLink to={to}>
+    <NavLink to={to} className="text-base">
       {children}
     </NavLink>
   );
 }
 
-export default MenuItem;
+export default MenuItemSm;

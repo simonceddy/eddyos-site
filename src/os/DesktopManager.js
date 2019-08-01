@@ -1,18 +1,41 @@
+import WindowsManager from './WindowsManager';
+
 export default function DesktopManager() {
-  const handlers = {};
+  // eslint-disable-next-line no-unused-vars
+  const windows = new WindowsManager();
 
   this.bindTextWindowHandler = (textWindowHandlers = {}) => {
-    if (handlers.text === undefined) {
-      handlers.text = textWindowHandlers;
+    if (!windows.hasWindow('text')) {
+      const winHandlers = Object.assign({}, textWindowHandlers, {
+        name: 'text',
+        id: windows.nextWindowId()
+      });
+      windows.addWindow(winHandlers);
     }
-    // console.log(handlers);
+    console.log(windows.getAll());
   };
 
   this.bindSettingsWindowHandler = (settingsWindowHandlers = {}) => {
-    if (handlers.settings === undefined) {
-      handlers.settings = settingsWindowHandlers;
+    if (!windows.hasWindow('settings')) {
+      const winHandlers = Object.assign({}, settingsWindowHandlers, {
+        name: 'settings',
+        id: windows.nextWindowId()
+      });
+      windows.addWindow(winHandlers);
     }
   };
 
-  this.getWindowHandlers = type => handlers[type] || false;
+  this.bindCliWindowHandler = (cliWindowHandlers = {}) => {
+    if (!windows.hasWindow('cli')) {
+      const winHandlers = Object.assign({}, cliWindowHandlers, {
+        name: 'cli',
+        id: windows.nextWindowId()
+      });
+      windows.addWindow(winHandlers);
+    }
+  };
+
+  this.getWindowHandlers = type => windows.getWindow(type);
+
+  this.getWindows = () => windows.getAll();
 }

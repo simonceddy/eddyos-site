@@ -3,7 +3,7 @@ import AppWrapper from '../../shared/components/AppWrapper';
 
 function WindowManager({ kernel }) {
   const windows = kernel.desktop.getWindows();
-  console.log(windows);
+  // console.log(windows);
   const closeWindow = () => {
     console.log('closed');
     kernel.loadBinding('history').push('/');

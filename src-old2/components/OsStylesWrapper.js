@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import theme from 'styled-theming';
-import { colourMaps } from '../themes';
+import { colourMaps } from '../../src/shared/themes';
 
 const primaryB = theme('mode', colourMaps.primaryB);
 

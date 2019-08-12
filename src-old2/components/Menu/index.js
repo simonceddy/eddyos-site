@@ -4,7 +4,7 @@ import theme from 'styled-theming';
 import MenuItemLg from './MenuItemLg';
 import MenuButton from './MenuButton';
 import MenuItemSm from './MenuItemSm';
-import { colourMaps } from '../../themes';
+import { colourMaps } from '../../../src/shared/themes';
 
 const primary = theme('mode', colourMaps.primary);
 const primaryB = theme('mode', colourMaps.primaryB);

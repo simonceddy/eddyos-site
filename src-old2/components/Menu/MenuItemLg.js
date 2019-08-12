@@ -2,7 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 import theme from 'styled-theming';
 import { NavLink } from 'react-router-dom';
-import { colourMaps } from '../../themes';
+import { colourMaps } from '../../../src/shared/themes';
 
 const primary = theme('mode', colourMaps.primary);
 const secondary = theme('mode', colourMaps.secondary);

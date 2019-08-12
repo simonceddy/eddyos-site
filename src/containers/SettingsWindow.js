@@ -3,7 +3,6 @@ import { withRouter } from 'react-router-dom';
 import RndWrapper from '../shared/components/RndWrapper';
 import Settings from '../components/Settings';
 import settingsWindowHandler from '../storage/settingsWindowHandler';
-import { getTheme, setTheme } from '../storage/themeMode';
 
 const {
   state,
@@ -11,14 +10,8 @@ const {
   setSize
 } = settingsWindowHandler();
 
-const themeMode = getTheme();
 
-const setThemeMode = (val) => {
-  console.log(val);
-  setTheme(val);
-};
-
-function SettingsWindow({ history }) {
+function SettingsWindow({ history, themeMode, setThemeMode }) {
   return (
     <RndWrapper
       containerState={state}

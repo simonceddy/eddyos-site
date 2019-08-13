@@ -10,9 +10,9 @@ const {
   setSize
 } = textWindowHandler();
 
-function Text({ match, history }) {
+function Text({ match, history, location }) {
   const { path: basePath } = match;
-  console.log(history);
+  console.log(location);
   return (
     <RndWrapper
       containerState={state}

@@ -1,11 +1,12 @@
 import React from 'react';
-import TaskbarIcons from './TaskbarIcons';
+import TaskbarRightIcons from './TaskbarRightIcons';
+import MenuButton from './MenuButton';
 
 function Taskbar() {
   return (
     <div className="p-1 flex flex-row justify-between items-center">
-      <div>Menu</div>
-      <TaskbarIcons />
+      <MenuButton />
+      <TaskbarRightIcons />
     </div>
   );
 }

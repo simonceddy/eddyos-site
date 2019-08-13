@@ -14,7 +14,7 @@ function Cli({ history, children }) {
   return (
     <RndWrapper
       containerState={state}
-      title="TESTING"
+      title="eddyCLI"
       onClose={() => history.push('/')}
       setPos={setPos}
       setSize={setSize}

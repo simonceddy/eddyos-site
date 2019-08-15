@@ -3,6 +3,7 @@ import { withRouter } from 'react-router-dom';
 import RndWrapper from '../shared/components/RndWrapper';
 import Settings from '../components/Settings';
 import settingsWindowHandler from '../storage/settingsWindowHandler';
+import { SETTINGS_WINDOW_MIN_WIDTH } from '../shared/settings';
 
 const {
   state,
@@ -19,6 +20,7 @@ function SettingsWindow({ history, themeMode, setThemeMode }) {
       onClose={() => history.push('/')}
       setPos={setPos}
       setSize={setSize}
+      minWidth={SETTINGS_WINDOW_MIN_WIDTH}
     >
       <Settings
         themeMode={themeMode}

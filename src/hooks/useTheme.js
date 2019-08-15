@@ -3,6 +3,9 @@ import { getTheme, storeTheme } from '../storage/themeMode';
 
 const themeMode = getTheme();
 
+/**
+ * Wraps useState and stores the theme mode in localStorage
+ */
 export default function useTheme() {
   const [theme, setTheme] = useState(themeMode);
 

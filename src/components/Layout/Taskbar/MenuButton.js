@@ -20,9 +20,10 @@ const StyledMenuButton = styled.div`
   }
 `;
 
-function MenuButton() {
+function MenuButton({ onClick }) {
   return (
     <StyledMenuButton
+      onClick={onClick}
       role="presentation"
       className="border cursor-pointer os-menu-button py-1 px-4 text-2xl block"
     >

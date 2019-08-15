@@ -12,7 +12,6 @@ function Root() {
 
   return (
     <ThemeProvider theme={{ mode }}>
-
       <div className="w-full h-full flex flex-col">
         <App>
           <Route path="/text" component={Text} />

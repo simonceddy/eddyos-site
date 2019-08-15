@@ -5,7 +5,8 @@ import { Rnd } from 'react-rnd';
 import { string } from 'prop-types';
 import ExitButton from './ExitButton';
 import { colourMaps } from '../themes';
-import { WINDOW_MAX_WIDTH, WINDOW_MAX_HEIGHT } from '../settings';
+import { WINDOW_MIN_WIDTH, WINDOW_MIN_HEIGHT } from '../settings';
+import rndHelper from '../../helpers/rndHelper';
 
 const secondary = theme('mode', colourMaps.secondary);
 const primary = theme('mode', colourMaps.primary);
@@ -30,9 +31,12 @@ function RndWrapper({
   children,
   title,
   onClose,
-  containerState
+  containerState,
+  minHeight = WINDOW_MIN_HEIGHT,
+  minWidth = WINDOW_MIN_WIDTH
 }) {
   // console.log(windowHandlers);
+  const { onDragStop, onResizeStop } = rndHelper(setSize, setPos);
 
   const {
     x,
@@ -49,22 +53,18 @@ function RndWrapper({
         width,
         height,
       }}
-      minWidth={WINDOW_MAX_WIDTH}
-      minHeight={WINDOW_MAX_HEIGHT}
+      minWidth={minWidth}
+      minHeight={minHeight}
       bounds="#desktop-container"
       dragHandleClassName="drag-handle"
-      onDragStop={(e, data) => setPos({ x: data.x, y: data.y })
-      }
-      onResizeStop={(e, dir, ref) => setSize({
-        width: Number.parseInt(ref.style.width, 0),
-        height: Number.parseInt(ref.style.height, 0)
-      })}
+      onDragStop={onDragStop}
+      onResizeStop={onResizeStop}
     >
       <StyledWindow className="w-full h-full flex flex-col">
         <div
-          className="drag-handle text-2xl px-2 cursor-move flex flex-row justify-between items-center"
+          className="drag-handle text-2xl px-2 cursor-move flex flex-row justify-between items-center overflow-hidden"
         >
-          <span>{title}</span>
+          <div>{title}</div>
           <ExitButton handler={onClose} />
         </div>
         <StyledContent className="flex-1 border p-2">

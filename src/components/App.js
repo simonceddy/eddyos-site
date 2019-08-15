@@ -1,17 +1,18 @@
 import React from 'react';
 import Underlay from './Layout/Underlay';
 import Taskbar from './Layout/Taskbar';
+import AppContainer from './Layout/AppContainer';
 
 function App({ children }) {
   return (
-    <div className="flex-1 flex flex-col m-1 border">
+    <AppContainer>
       <Underlay />
       <div className="flex-1" id="desktop-container">
         {/* desktop */}
         {children}
       </div>
       <Taskbar />
-    </div>
+    </AppContainer>
   );
 }
 

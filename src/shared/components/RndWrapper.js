@@ -64,7 +64,14 @@ function RndWrapper({
         <div
           className="drag-handle text-2xl px-2 cursor-move flex flex-row justify-between items-center overflow-hidden"
         >
-          <div>{title}</div>
+          <div
+            className="overflow-hidden whitespace-no-wrap"
+            style={{
+              textOverflow: 'ellipsis'
+            }}
+          >
+            {title}
+          </div>
           <ExitButton handler={onClose} />
         </div>
         <StyledContent className="flex-1 border p-2">

@@ -7,7 +7,7 @@ import { colourMaps } from '../../../shared/themes';
 const primary = theme('mode', colourMaps.primary);
 const secondary = theme('mode', colourMaps.secondary);
 
-const WrappedMenuItemLg = styled.span`
+const WrappedMenuItemLg = styled.div`
   :hover {
     color: ${primary};
     background: ${secondary};
@@ -17,9 +17,9 @@ const WrappedMenuItemLg = styled.span`
 
 function MenuItemLg({ children, to }) {
   return (
-    <WrappedMenuItemLg>
-      <NavLink to={to} className="text-2xl w-full">
-        <span className="w-full">{children}</span>
+    <WrappedMenuItemLg className="w-full text-center">
+      <NavLink to={to} className="text-2xl block">
+        {children}
       </NavLink>
     </WrappedMenuItemLg>
   );

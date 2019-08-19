@@ -1,4 +1,5 @@
 import React from 'react';
+import { withRouter } from 'react-router-dom';
 import Underlay from './Layout/Underlay';
 import Taskbar from './Layout/Taskbar';
 import AppContainer from './Layout/AppContainer';
@@ -16,4 +17,4 @@ function App({ children }) {
   );
 }
 
-export default App;
+export default withRouter(App);

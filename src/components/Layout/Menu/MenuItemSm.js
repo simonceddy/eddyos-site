@@ -18,8 +18,8 @@ const WrappedMenuItemSm = styled.span`
 function MenuItemSm({ children, to }) {
   return (
     <WrappedMenuItemSm>
-      <NavLink to={to} className="text-xl w-full">
-        <span className="w-full">{children}</span>
+      <NavLink to={to} className="text-xl w-full block">
+        {children}
       </NavLink>
     </WrappedMenuItemSm>
   );

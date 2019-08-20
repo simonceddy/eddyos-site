@@ -1,8 +1,9 @@
 import React from 'react';
-import { withRouter } from 'react-router-dom';
+// import { withRouter } from 'react-router-dom';
 // import CliWindow from './Windows/CliWindow';
-import RndWrapper from '../shared/components/RndWrapper';
+import RndWrapper from '../shared/containers/RndWrapper';
 import cliWindowHandler from '../storage/cliWindowHandler';
+import CliApp from '../components/Cli/CliApp';
 
 const {
   state,
@@ -10,18 +11,19 @@ const {
   setSize
 } = cliWindowHandler();
 
-function Cli({ history, children }) {
+function Cli({ children, onClose }) {
   return (
     <RndWrapper
       containerState={state}
       title="eddyCLI"
-      onClose={() => history.push('/')}
+      onClose={onClose}
       setPos={setPos}
       setSize={setSize}
     >
+      <CliApp />
       {children}
     </RndWrapper>
   );
 }
 
-export default withRouter(Cli);
+export default Cli;

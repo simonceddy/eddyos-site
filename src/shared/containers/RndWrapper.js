@@ -3,7 +3,8 @@ import styled from 'styled-components';
 import theme from 'styled-theming';
 import { Rnd } from 'react-rnd';
 import { string } from 'prop-types';
-import ExitButton from './ExitButton';
+import Scrollbar from 'react-perfect-scrollbar';
+import ExitButton from '../components/ExitButton';
 import { colourMaps } from '../themes';
 import { WINDOW_MIN_WIDTH, WINDOW_MIN_HEIGHT } from '../settings';
 import rndHelper from '../../helpers/rndHelper';
@@ -74,8 +75,10 @@ function RndWrapper({
           </div>
           <ExitButton handler={onClose} />
         </div>
-        <StyledContent className="flex-1 border p-2">
-          {children}
+        <StyledContent className="flex-1 border overflow-hidden">
+          <Scrollbar className="p-2">
+            {children}
+          </Scrollbar>
         </StyledContent>
       </StyledWindow>
     </Rnd>

@@ -1,6 +1,6 @@
 import React from 'react';
 import { withRouter } from 'react-router-dom';
-import RndWrapper from '../shared/components/RndWrapper';
+import RndWrapper from '../shared/containers/RndWrapper';
 import Settings from '../components/Settings';
 import settingsWindowHandler from '../storage/settingsWindowHandler';
 import { SETTINGS_WINDOW_MIN_WIDTH } from '../shared/settings';
@@ -12,12 +12,12 @@ const {
 } = settingsWindowHandler();
 
 
-function SettingsWindow({ history, themeMode, setThemeMode }) {
+function SettingsWindow({ onClose, themeMode, setThemeMode }) {
   return (
     <RndWrapper
       containerState={state}
       title="Settings"
-      onClose={() => history.push('/')}
+      onClose={onClose}
       setPos={setPos}
       setSize={setSize}
       minWidth={SETTINGS_WINDOW_MIN_WIDTH}

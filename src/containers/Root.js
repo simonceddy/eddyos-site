@@ -9,6 +9,7 @@ import useTheme from '../hooks/useTheme';
 // import WindowManager from './WindowManager';
 
 function Root({ history }) {
+  console.log(history);
   const { theme: mode, setThemeMode } = useTheme();
   const [textApp, setTextApp] = useState(false);
   const [settingsApp, setSettingsApp] = useState(false);
@@ -17,32 +18,37 @@ function Root({ history }) {
     <ThemeProvider theme={{ mode }}>
       <div className="w-full h-full flex flex-col">
         <App>
-          {textApp ? (
-            <Text
-              onClose={() => {
-                setTextApp(false);
-                history.push('/');
-              }}
-            />
-          ) : null}
-          {settingsApp ? (
-            <SettingsWindow
-              themeMode={mode}
-              setThemeMode={setThemeMode}
-              onClose={() => {
-                setSettingsApp(false);
-                history.push('/');
-              }}
-            />
-          ) : null}
-          {cliApp ? (
-            <Cli
-              onClose={() => {
-                setCliApp(false);
-                history.push('/');
-              }}
-            />
-          ) : null}
+          <Route render={() => (
+            <>
+              {textApp ? (
+                <Text
+                  onClose={() => {
+                    setTextApp(false);
+                    history.push('/');
+                  }}
+                />
+              ) : null}
+              {settingsApp ? (
+                <SettingsWindow
+                  themeMode={mode}
+                  setThemeMode={setThemeMode}
+                  onClose={() => {
+                    setSettingsApp(false);
+                    history.push('/');
+                  }}
+                />
+              ) : null}
+              {cliApp ? (
+                <Cli
+                  onClose={() => {
+                    setCliApp(false);
+                    history.push('/');
+                  }}
+                />
+              ) : null}
+            </>
+          )}
+          />
           <Route
             path="/text"
             render={() => {

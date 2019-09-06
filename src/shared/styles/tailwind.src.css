@@ -1,0 +1,68 @@
+@tailwind base;
+
+.menu {
+  max-width: 350px;
+  min-width: 200px;
+}
+
+.menu-button, .menu-item {
+  @apply bg-green text-black m-2 border border-green border-4 no-underline;
+}
+
+.menu-item {
+  @apply w-5/6;
+}
+
+.menu-button:hover, .menu-item:hover {
+  @apply text-green bg-black;
+}
+
+.menu-button:active, .menu-item:active {
+  @apply underline;
+}
+
+.link {
+  @apply text-green underline;
+}
+
+.link, .menu-item {
+  @apply cursor-pointer;
+}
+
+.link:hover {
+  @apply text-black bg-green no-underline;
+}
+
+.link:active {
+  @apply text-black bg-green underline;
+}
+
+.exit-button {
+  @apply bg-green-dark text-black;
+}
+
+.exit-button:hover {
+  @apply bg-black text-green;
+}
+
+.footer {
+  @apply flex flex-row justify-around w-full mt-1 border border-green-dark text-2xl;
+}
+
+@media (max-width: 640px) {
+  .footer {
+    @apply flex-col text-xl;
+  }
+}
+
+.text-input {
+  caret-color: #24f12e;
+  @apply bg-black text-green;
+}
+
+.app-layout {
+  background: rgba(0, 0, 0, 0);
+}
+
+@tailwind components;
+@tailwind utilities;

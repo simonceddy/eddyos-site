@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import theme from 'styled-theming';
-import { colourMaps } from '../../shared/themes';
+import { colourMaps } from '../shared/themes';
 
 const secondary = theme('mode', colourMaps.secondary);
 const primaryC = theme('mode', colourMaps.primaryC);
@@ -27,7 +27,10 @@ function Underlay() {
           Simon Eddy
         </span>
         <span style={{ fontSize: '2rem' }}>
-          Web Development, I.T. Support
+          PHP and JavaScript Developer
+        </span>
+        <span style={{ fontSize: '2rem' }}>
+          Audio Engineer
         </span>
       </UnderlayText>
     </StyledUnderlay>

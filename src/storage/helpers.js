@@ -8,7 +8,7 @@ export function getFromStorage(key, defaultState) {
     setInStorage(key, defaultState);
     result = localStorage.getItem(key);
   }
-  console.log(result);
+  // console.log(result);
   // console.log(defaultState, localStorage);
   return JSON.parse(result);
 }

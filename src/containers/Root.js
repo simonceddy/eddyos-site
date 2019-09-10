@@ -1,16 +1,15 @@
+/* eslint-disable no-unused-vars */
 import React from 'react';
 import { ThemeProvider } from 'styled-components';
-import Layout from '../components/Layout/index';
 import useTheme from '../hooks/useTheme';
+import App from '../components/App';
 
 function Root() {
   const { theme: mode, setThemeMode } = useTheme();
-  console.log(setThemeMode);
+  console.log('root container was rendered');
   return (
     <ThemeProvider theme={{ mode }}>
-      <Layout>
-        Testing
-      </Layout>
+      <App />
     </ThemeProvider>
   );
 }

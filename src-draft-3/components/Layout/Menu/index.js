@@ -18,7 +18,7 @@ function Menu({ onClick }) {
   return (
     <MenuBox
       role="presentation"
-      className="flex flex-col justify-center items-center absolute float-right p-2"
+      className="flex flex-col justify-center items-center absolute float-right p-2 relative"
       onClick={onClick}
     >
       <MenuItemLg to="/text/about">About</MenuItemLg>

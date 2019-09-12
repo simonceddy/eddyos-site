@@ -26,11 +26,10 @@ const StyledMenuButton = styled.button`
   }
 `;
 
-function MenuButton({ onClick, onHover }) {
+function MenuButton({ onClick }) {
   return (
     <StyledMenuButton
       onClick={onClick}
-      onHover={onHover}
       type="button"
       className="border cursor-pointer os-menu-button py-1 px-4 text-2xl block"
     >

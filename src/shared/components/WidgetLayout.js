@@ -14,7 +14,7 @@ const StyledWindow = styled.div`
 
 function WidgetLayout({ children }) {
   return (
-    <StyledWindow>
+    <StyledWindow className="w-full h-full flex flex-col">
       {children}
     </StyledWindow>
   );

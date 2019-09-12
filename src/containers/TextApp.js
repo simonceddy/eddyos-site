@@ -2,20 +2,20 @@ import React from 'react';
 import { withRouter, Switch, Route } from 'react-router-dom';
 import Widget from '../shared/containers/Widget';
 import Text from '../components/Text';
-// import WidgetLayout from '../shared/components/WidgetLayout';
+import textWindowHandler from '../storage/textWindowHandler';
 
-function TextApp({ match, history }) {
-  // TODO fix excessive rendering
+const { setPos, setSize, state } = textWindowHandler();
+
+function TextApp({ match }) {
   const { path } = match;
-  const onClose = () => history.push('/');
-  console.log('TextApp rendered');
+  console.log('text rendered');
   return (
-    <Widget>
+    <Widget setPos={setPos} setSize={setSize} state={state}>
       <Switch>
         <Route
           path={`${path}/about`}
           render={() => (
-            <Text title="About" onClose={onClose}>
+            <Text title="About">
               About Simon
             </Text>
           )}
@@ -23,7 +23,7 @@ function TextApp({ match, history }) {
         <Route
           path={`${path}/services`}
           render={() => (
-            <Text title="Services" onClose={onClose}>
+            <Text title="Services">
               Services that Simon offers.
             </Text>
           )}
@@ -31,7 +31,7 @@ function TextApp({ match, history }) {
         <Route
           path={`${path}/code`}
           render={() => (
-            <Text title="Code Examples and Previous Work" onClose={onClose}>
+            <Text title="Code Examples and Previous Work">
               Examples of code. Github links etc.
             </Text>
           )}
@@ -39,14 +39,14 @@ function TextApp({ match, history }) {
         <Route
           path={`${path}/contact`}
           render={() => (
-            <Text title="Contact Simon" onClose={onClose}>
+            <Text title="Contact Simon">
               Brief contact details
             </Text>
           )}
         />
         <Route
           render={() => (
-            <Text onClose={onClose}>
+            <Text>
             Test Content
             </Text>
           )}

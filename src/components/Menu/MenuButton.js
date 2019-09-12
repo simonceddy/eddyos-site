@@ -26,14 +26,20 @@ const StyledMenuButton = styled.button`
   }
 `;
 
-function MenuButton({ onClick }) {
+function MenuButton({ toggleMenu, children, toggled }) {
   return (
     <StyledMenuButton
-      onClick={onClick}
+      id="menu-button"
       type="button"
-      className="border cursor-pointer os-menu-button py-1 px-4 text-2xl block"
+      className="border cursor-pointer os-menu-button py-1 px-4 text-2xl block relative"
+      onFocus={() => {
+        if (!toggled) {
+          toggleMenu(true);
+        }
+      }}
     >
       MENU
+      {children}
     </StyledMenuButton>
   );
 }

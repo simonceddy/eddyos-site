@@ -1,11 +1,10 @@
-/* eslint-disable no-unused-vars */
 import React from 'react';
 import { Route } from 'react-router-dom';
 import { ThemeProvider } from 'styled-components';
 import useTheme from '../hooks/useTheme';
 import App from '../components/App';
-import Settings from '../components/Widgets/Settings';
 import TextApp from './TextApp';
+import SettingsApp from './SettingsApp';
 
 function Root() {
   const { theme: mode, setThemeMode } = useTheme();
@@ -14,7 +13,10 @@ function Root() {
     <ThemeProvider theme={{ mode }}>
       <App>
         <Route path="/text" render={() => (<TextApp />)} />
-        <Route path="/settings" render={() => (<Settings setTheme={setThemeMode} themeMode={mode} />)} />
+        <Route
+          path="/settings"
+          render={() => (<SettingsApp setTheme={setThemeMode} themeMode={mode} />)}
+        />
       </App>
     </ThemeProvider>
   );

@@ -1,16 +1,14 @@
 import React from 'react';
 import { withRouter } from 'react-router-dom';
-import TitleBar from '../shared/components/TitleBar';
-import CloseButton from '../shared/components/CloseButton';
 import ContentWrapper from '../shared/components/ContentWrapper';
+import WidgetTitleBar from '../shared/components/WidgetTitleBar';
 
-function Text({ children, title = 'Text', onClose }) {
+function Text({ children, title = 'Text', history }) {
   return (
     <>
-      <TitleBar>
+      <WidgetTitleBar onClose={() => history.push('/')}>
         {title}
-        <CloseButton onClick={onClose} />
-      </TitleBar>
+      </WidgetTitleBar>
       <ContentWrapper>
         {children}
       </ContentWrapper>

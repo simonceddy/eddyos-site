@@ -1,13 +1,19 @@
 import React from 'react';
 import WidgetLayout from '../components/WidgetLayout';
+import RndWrapper from '../components/RndWrapper';
 
 function Widget({
-  children
+  children,
+  setPos,
+  setSize,
+  state
 }) {
   return (
-    <WidgetLayout>
-      {children}
-    </WidgetLayout>
+    <RndWrapper setPos={setPos} setSize={setSize} data={state}>
+      <WidgetLayout>
+        {children}
+      </WidgetLayout>
+    </RndWrapper>
   );
 }
 

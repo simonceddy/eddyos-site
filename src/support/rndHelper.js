@@ -1,8 +1,8 @@
 /* eslint-disable no-unused-vars */
 export default function rndHelper(setSize, setPos) {
-  const handleResize = () => {
+  /* const handleResize = () => {
     console.log(setSize, setPos);
-  };
+  }; */
 
   const onResizeStop = (e, dir, ref, delta) => {
     // TODO set pos when resized from top or left
@@ -19,7 +19,6 @@ export default function rndHelper(setSize, setPos) {
   };
 
   return {
-    handleResize,
     onResizeStop,
     onDragStop
   };

@@ -1,10 +1,9 @@
-import React, { useState } from 'react';
+import React from 'react';
 import styled from 'styled-components';
 import theme from 'styled-theming';
 import { colourMaps } from '../../shared/themes';
 import Icons from './Icons';
-import MenuButton from './MenuButton';
-import MenuWrapper from '../MenuWrapper';
+import Menu from '../Menu';
 
 const primaryB = theme('mode', colourMaps.primaryB);
 
@@ -13,17 +12,9 @@ const StyledTaskbar = styled.div`
 `;
 
 function Toolbar() {
-  // TODO make better menu
-  const [menuActive, setMenuActive] = useState(false);
-
-  const toggleMenu = () => setMenuActive(!menuActive);
-
   return (
     <StyledTaskbar className="p-1 flex flex-row justify-between items-center">
-      <div id="menu-container">
-        <MenuButton onClick={toggleMenu} />
-        {menuActive ? (<MenuWrapper />) : null}
-      </div>
+      <Menu />
       <Icons />
     </StyledTaskbar>
   );

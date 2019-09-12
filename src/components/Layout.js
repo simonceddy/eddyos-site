@@ -22,10 +22,10 @@ function Layout({ children }) {
     <div className="w-full h-full flex flex-col">
       <StyledContainer className="flex-1 flex m-1 border">
         <Underlay />
+        <Toolbar />
         <Desktop>
           {children}
         </Desktop>
-        <Toolbar />
       </StyledContainer>
     </div>
   );

@@ -1,22 +1,19 @@
 import React from 'react';
 import { withRouter } from 'react-router-dom';
-import Widget from '../../shared/containers/Widget';
 import ThemeSelector from './Settings/ThemeSelector';
-import TitleBar from '../../shared/components/TitleBar';
-import CloseButton from '../../shared/components/CloseButton';
 import ContentWrapper from '../../shared/components/ContentWrapper';
+import WidgetTitleBar from '../../shared/components/WidgetTitleBar';
 
 function Settings({ history, setTheme, themeMode }) {
   return (
-    <Widget>
-      <TitleBar>
+    <>
+      <WidgetTitleBar onClose={() => history.push('/')}>
         Settings
-        <CloseButton onClick={() => history.push('/')} />
-      </TitleBar>
+      </WidgetTitleBar>
       <ContentWrapper>
         <ThemeSelector currentTheme={themeMode} setTheme={setTheme} />
       </ContentWrapper>
-    </Widget>
+    </>
   );
 }
 

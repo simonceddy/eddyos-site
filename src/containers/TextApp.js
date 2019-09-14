@@ -3,6 +3,10 @@ import { withRouter, Switch, Route } from 'react-router-dom';
 import Widget from '../shared/containers/Widget';
 import Text from '../components/Text';
 import textWindowHandler from '../storage/textWindowHandler';
+import Code from '../components/pages/Code';
+import About from '../components/pages/About';
+import Contact from '../components/pages/Contact';
+import Services from '../components/pages/Services';
 
 const { setPos, setSize, state } = textWindowHandler();
 
@@ -15,33 +19,25 @@ function TextApp({ match }) {
         <Route
           path={`${path}/about`}
           render={() => (
-            <Text title="About">
-              About Simon
-            </Text>
+            <About />
           )}
         />
         <Route
           path={`${path}/services`}
           render={() => (
-            <Text title="Services">
-              Services that Simon offers.
-            </Text>
+            <Services />
           )}
         />
         <Route
           path={`${path}/code`}
           render={() => (
-            <Text title="Code Examples and Previous Work">
-              Examples of code. Github links etc.
-            </Text>
+            <Code />
           )}
         />
         <Route
           path={`${path}/contact`}
           render={() => (
-            <Text title="Contact Simon">
-              Brief contact details
-            </Text>
+            <Contact />
           )}
         />
         <Route

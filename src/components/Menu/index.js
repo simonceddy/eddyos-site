@@ -17,7 +17,7 @@ function Menu() {
   const [menuToggled, setMenuToggled] = useState(false);
 
   return (
-    <MenuContainer id="menu-container" className="relative">
+    <MenuContainer id="menu-container" className="relative z-50">
       {/* <div onPointerOut /> */}
       <MenuButton toggled={menuToggled} toggleMenu={setMenuToggled} />
       <MenuItems toggled={menuToggled} toggleMenu={setMenuToggled} />

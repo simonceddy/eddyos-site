@@ -17,7 +17,7 @@ const StyledContent = styled.div`
 
 function ContentWrapper({ children }) {
   return (
-    <StyledContent className="flex-1 border overflow-hidden">
+    <StyledContent className="flex-1 border overflow-hidden whitespace-pre-line">
       <Scrollbar className="p-2">
         {children}
       </Scrollbar>

@@ -11,7 +11,12 @@ function Settings({ history, setTheme, themeMode }) {
         Settings
       </WidgetTitleBar>
       <ContentWrapper>
-        <ThemeSelector currentTheme={themeMode} setTheme={setTheme} />
+        <div className="flex flex-row justify-between">
+          <span className="ml-1">Select theme:</span>
+          <span className="mr-1">
+            <ThemeSelector currentTheme={themeMode} setTheme={setTheme} />
+          </span>
+        </div>
       </ContentWrapper>
     </>
   );

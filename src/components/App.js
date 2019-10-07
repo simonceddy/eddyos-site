@@ -1,6 +1,7 @@
 import React from 'react';
 import Layout from './Layout';
 import Desktop from './Desktop';
+import Toolbar from './Toolbar';
 
 function App({ children }) {
   return (
@@ -8,6 +9,7 @@ function App({ children }) {
       <Desktop>
         {children}
       </Desktop>
+      <Toolbar />
     </Layout>
   );
 }

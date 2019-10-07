@@ -1,41 +1,37 @@
 /* eslint-disable no-unused-vars */
-import { useState } from 'react';
+import { useState, useCallback } from 'react';
+import { SETTINGS_WIDGET, TEXT_WIDGET, CLI_WIDGET } from '../shared/types/widgetTypes';
 
-export const SETTINGS_WIDGET = 'settings';
-export const TEXT_WIDGET = 'text';
-export const CLI_WIDGET = 'cli';
-
-const validWidgets = {
-  [SETTINGS_WIDGET]: true,
-  [TEXT_WIDGET]: true,
-  [CLI_WIDGET]: true,
+const widgets = {
+  [SETTINGS_WIDGET]: false,
+  [TEXT_WIDGET]: false,
+  [CLI_WIDGET]: false,
 };
 
 function useWidgets() {
-  const [activeWidgets, setActiveWidgets] = useState([]);
+  const [activeWidgets, setActiveWidgets] = useState(widgets);
 
-  const showWidget = (name) => {
+  const addWidget = (name, widget = {}) => {
     // TODO
-    if (validWidgets[name] !== true) {
+    if (widgets[name] === undefined) {
       return false;
     }
-    // TODO map instead of spread
-    setActiveWidgets([...activeWidgets, name]);
+    setActiveWidgets(() => ({ ...activeWidgets, [name]: widget }));
     return true;
   };
 
   // TODO
-  const closeWidget = (name) => {
-    if (validWidgets[name] !== true) {
-      return false;
+  const closeWidget = (name, callback = () => null) => {
+    if (widgets[name] !== undefined) {
+      callback();
+      setActiveWidgets(() => ({ ...activeWidgets, [name]: false }));
     }
-    return true;
   };
 
   return {
     activeWidgets,
     closeWidget,
-    showWidget
+    addWidget
   };
 }
 

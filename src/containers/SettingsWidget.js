@@ -5,7 +5,15 @@ import useSettingsWidget from '../hooks/widgets/useSettingsWidget';
 import Widget from '../shared/containers/Widget';
 import Settings from '../components/Widgets/Settings';
 
-function SettingsWidget({ history, theme, setTheme = () => null }) {
+function SettingsWidget({
+  history,
+  theme,
+  setTheme = () => null,
+  onClick = () => null,
+  zIndex,
+  onClose,
+  selected
+}) {
   const { mode: themeMode } = theme;
   const { state, setPos, setSize } = useSettingsWidget();
   return (
@@ -14,10 +22,13 @@ function SettingsWidget({ history, theme, setTheme = () => null }) {
       setPos={setPos}
       setSize={setSize}
       title="Settings"
-      onClose={() => {
-        console.log('closing settings widget');
-        history.push('/');
+      onClose={onClose}
+      onClick={(e) => {
+        history.push('/settings');
+        onClick(e);
       }}
+      zIndex={zIndex}
+      selected={selected}
     >
       <Settings themeMode={themeMode} setTheme={setTheme} />
     </Widget>

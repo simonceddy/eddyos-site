@@ -1,7 +1,7 @@
 import React from 'react';
 import { Rnd } from 'react-rnd';
 import rndHelper from '../../util/rndHelper';
-import { WINDOW_MIN_WIDTH, WINDOW_MIN_HEIGHT } from '../types/widgetTypes';
+import { WINDOW_MIN_WIDTH, WINDOW_MIN_HEIGHT } from '../types/widgetDimensions';
 import WidgetLayout from '../components/WidgetLayout';
 import WidgetTitleBar from '../components/WidgetTitleBar';
 import ContentWrapper from '../components/ContentWrapper';
@@ -14,7 +14,9 @@ function Widget({
   data,
   minHeight = null,
   minWidth = null,
-  onClose = () => null
+  onClick = () => null,
+  onClose = () => null,
+  zIndex = 20
 }) {
   const { onDragStop, onResizeStop } = rndHelper(setSize, setPos);
 
@@ -39,6 +41,10 @@ function Widget({
       dragHandleClassName="drag-handle"
       onDragStop={onDragStop}
       onResizeStop={onResizeStop}
+      onClick={onClick}
+      style={{
+        zIndex
+      }}
     >
       <WidgetLayout>
         <WidgetTitleBar onClose={onClose}>{title}</WidgetTitleBar>

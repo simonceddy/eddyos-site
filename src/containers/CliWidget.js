@@ -3,7 +3,13 @@ import { withRouter } from 'react-router-dom';
 import useCliWidget from '../hooks/widgets/useCliWidget';
 import Widget from '../shared/containers/Widget';
 
-function CliWidget({ history }) {
+function CliWidget({
+  onClose = () => null,
+  zIndex,
+  onClick = () => null,
+  history,
+  selected
+}) {
   const { state, setPos, setSize } = useCliWidget();
   return (
     <Widget
@@ -11,10 +17,13 @@ function CliWidget({ history }) {
       setPos={setPos}
       setSize={setSize}
       title="conEddy"
-      onClose={() => {
-        console.log('closing cli widget');
-        history.push('/digg');
+      onClose={onClose}
+      onClick={(e) => {
+        history.push('/cli');
+        onClick(e);
       }}
+      zIndex={zIndex}
+      selected={selected}
     >
       .......
     </Widget>

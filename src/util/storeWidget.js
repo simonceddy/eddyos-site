@@ -1,4 +1,4 @@
-import { getFromStorage, setInStorage } from './helpers';
+import { getFromStorage, setInStorage } from './storageHelpers';
 
 const storeWidget = (key, initialState) => {
   const state = getFromStorage(key, initialState);
@@ -14,7 +14,7 @@ const storeWidget = (key, initialState) => {
   const setSize = ({ width, height }) => {
     // TODO validate width and height
     // console.log(width, height);
-    state.width = width;
+    state.width = (width);
     state.height = height;
     setInStorage(key, state);
   };

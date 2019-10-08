@@ -1,0 +1,4 @@
+export const GET_WIDGET_POS = 'GET_WIDGET_POS';
+export const GET_WIDGET_SIZE = 'GET_WIDGET_SIZE';
+export const SET_WIDGET_POS = 'SET_WIDGET_POS';
+export const SET_WIDGET_SIZE = 'SET_WIDGET_SIZE';

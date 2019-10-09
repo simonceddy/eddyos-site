@@ -1,32 +1,36 @@
+/* eslint-disable no-unused-vars */
 import React from 'react';
 import { withRouter } from 'react-router-dom';
-import useTextWidget from '../hooks/widgets/useTextWidget';
+import { connect } from 'react-redux';
+import { setTextWidgetSize, setTextWidgetPos } from '../store/actions/textWidgetActions';
 import Widget from '../shared/containers/Widget';
 
 function TextWidget({
-  history,
-  onClick = () => null,
-  zIndex,
-  onClose,
-  selected
+  widgetState,
+  setSize,
+  setPos,
+  active
 }) {
-  const { state, setPos, setSize } = useTextWidget();
+  console.log(active);
   return (
     <Widget
-      onClose={onClose}
-      data={state}
-      setPos={setPos}
+      data={widgetState}
       setSize={setSize}
-      onClick={(e) => {
-        history.push('/text');
-        onClick(e);
-      }}
-      zIndex={zIndex}
-      selected={selected}
+      setPos={setPos}
     >
-      asdadadsadad;lajd;alsjdl;akd;lakdlakd;ldkakd;adka;ldk;l
+      Testing
     </Widget>
   );
 }
 
-export default withRouter(TextWidget);
+const mapStateToProps = (state) => ({
+  widgetState: state.text,
+  active: state.activeWidgets.text
+});
+
+const mapDispatchToProps = (dispatch, ownProps) => ({
+  setSize: (height, width) => dispatch(setTextWidgetSize(height, width)),
+  setPos: (x, y) => dispatch(setTextWidgetPos(x, y)),
+});
+
+export default connect(mapStateToProps, mapDispatchToProps)(withRouter(TextWidget));

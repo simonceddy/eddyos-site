@@ -1,5 +1,6 @@
 export function setInStorage(key, state) {
   localStorage.setItem(key, JSON.stringify(state));
+  return state;
 }
 
 export function getFromStorage(key, defaultState) {

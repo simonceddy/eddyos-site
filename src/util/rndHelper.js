@@ -7,15 +7,15 @@ export default function rndHelper(setSize, setPos) {
   const onResizeStop = (e, dir, ref, delta) => {
     // TODO set pos when resized from top or left
     // console.log(delta);
-    setSize({
-      width: Number.parseInt(ref.style.width, 0),
-      height: Number.parseInt(ref.style.height, 0)
-    });
+    setSize(
+      Number.parseInt(ref.style.height, 0),
+      Number.parseInt(ref.style.width, 0)
+    );
   };
 
   const onDragStop = (e, data) => {
     // console.log(data);
-    setPos({ x: data.x, y: data.y });
+    setPos(data.x, data.y);
   };
 
   return {

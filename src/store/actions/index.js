@@ -19,17 +19,19 @@ export const getWidgetPos = (name) => ({
   }
 });
 
-export const setWidgetSize = (height, width) => ({
+export const setWidgetSize = (name, height, width) => ({
   type: SET_WIDGET_SIZE,
   payload: {
+    name,
     height,
     width
   }
 });
 
-export const setWidgetPos = (x, y) => ({
+export const setWidgetPos = (name, x, y) => ({
   type: SET_WIDGET_POS,
   payload: {
+    name,
     x,
     y
   }

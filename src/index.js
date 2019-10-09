@@ -1,5 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import { Provider } from 'react-redux';
 // import monorouter from 'monorouter';
 // import monorouterReact from 'monorouter-react';
 import { BrowserRouter as Router } from 'react-router-dom';
@@ -10,13 +11,15 @@ import './shared/styles/index.css';
 import './shared/styles/tailwind.css';
 import * as serviceWorker from './serviceWorker';
 import Root from './containers/Root';
+import store from './store';
 
 // console.log(monorouter().setup(monorouterReact()));
-
 ReactDOM.render(
-  <Router>
-    <Root />
-  </Router>,
+  <Provider store={store}>
+    <Router>
+      <Root />
+    </Router>
+  </Provider>,
   document.getElementById('root')
 );
 

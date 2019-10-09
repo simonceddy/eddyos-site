@@ -55,7 +55,10 @@ function Root({ history }) {
   return (
     <ThemeProvider theme={{ mode }}>
       <App>
-        {renderWidgets()}
+        {/* {renderWidgets()} */}
+        <TextWidget />
+        <SettingsWidget />
+        <CliWidget />
         <Route
           path="/text"
           render={() => (

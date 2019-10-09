@@ -1,33 +1,40 @@
+/* eslint-disable no-unused-vars */
 import React from 'react';
 import { withRouter } from 'react-router-dom';
-import useCliWidget from '../hooks/widgets/useCliWidget';
+import { connect } from 'react-redux';
+import {
+  setCliWidgetSize,
+  setCliWidgetPos
+} from '../store/actions/cliWidgetActions';
 import Widget from '../shared/containers/Widget';
 
 function CliWidget({
-  onClose = () => null,
-  zIndex,
-  onClick = () => null,
-  history,
-  selected
+  widgetState,
+  setSize,
+  setPos,
+  active
 }) {
-  const { state, setPos, setSize } = useCliWidget();
+  console.log(widgetState);
   return (
     <Widget
-      data={state}
-      setPos={setPos}
+      data={widgetState}
       setSize={setSize}
+      setPos={setPos}
       title="conEddy"
-      onClose={onClose}
-      onClick={(e) => {
-        history.push('/cli');
-        onClick(e);
-      }}
-      zIndex={zIndex}
-      selected={selected}
     >
-      .......
+      Testing
     </Widget>
   );
 }
 
-export default withRouter(CliWidget);
+const mapStateToProps = (state) => ({
+  widgetState: state.cli,
+  active: state.activeWidgets.cli
+});
+
+const mapDispatchToProps = (dispatch, ownProps) => ({
+  setSize: (height, width) => dispatch(setCliWidgetSize(height, width)),
+  setPos: (x, y) => dispatch(setCliWidgetPos(x, y)),
+});
+
+export default connect(mapStateToProps, mapDispatchToProps)(withRouter(CliWidget));

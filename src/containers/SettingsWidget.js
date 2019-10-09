@@ -1,38 +1,40 @@
+/* eslint-disable no-unused-vars */
 import React from 'react';
 import { withRouter } from 'react-router-dom';
-import { withTheme } from 'styled-components';
-import useSettingsWidget from '../hooks/widgets/useSettingsWidget';
+import { connect } from 'react-redux';
+import {
+  setSettingsWidgetSize,
+  setSettingsWidgetPos
+} from '../store/actions/settingsWidgetActions';
 import Widget from '../shared/containers/Widget';
-import Settings from '../components/Widgets/Settings';
 
 function SettingsWidget({
-  history,
-  theme,
-  setTheme = () => null,
-  onClick = () => null,
-  zIndex,
-  onClose,
-  selected
+  widgetState,
+  setSize,
+  setPos,
+  active
 }) {
-  const { mode: themeMode } = theme;
-  const { state, setPos, setSize } = useSettingsWidget();
+  console.log(widgetState);
   return (
     <Widget
-      data={state}
-      setPos={setPos}
+      data={widgetState}
       setSize={setSize}
+      setPos={setPos}
       title="Settings"
-      onClose={onClose}
-      onClick={(e) => {
-        history.push('/settings');
-        onClick(e);
-      }}
-      zIndex={zIndex}
-      selected={selected}
     >
-      <Settings themeMode={themeMode} setTheme={setTheme} />
+      Testing
     </Widget>
   );
 }
 
-export default withRouter(withTheme(SettingsWidget));
+const mapStateToProps = (state) => ({
+  widgetState: state.settings,
+  active: state.activeWidgets.settings
+});
+
+const mapDispatchToProps = (dispatch, ownProps) => ({
+  setSize: (height, width) => dispatch(setSettingsWidgetSize(height, width)),
+  setPos: (x, y) => dispatch(setSettingsWidgetPos(x, y)),
+});
+
+export default connect(mapStateToProps, mapDispatchToProps)(withRouter(SettingsWidget));

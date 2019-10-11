@@ -7,11 +7,13 @@ import {
   setCliWidgetPos
 } from '../store/actions/cliWidgetActions';
 import Widget from '../shared/containers/Widget';
+import { toggleWidgetInactive } from '../store/actions/widgetActions';
 
 function CliWidget({
   widgetState,
   setSize,
   setPos,
+  onClose,
   active
 }) {
   console.log(widgetState);
@@ -21,6 +23,7 @@ function CliWidget({
       setSize={setSize}
       setPos={setPos}
       title="conEddy"
+      onClose={onClose}
     >
       Testing
     </Widget>
@@ -35,6 +38,7 @@ const mapStateToProps = (state) => ({
 const mapDispatchToProps = (dispatch, ownProps) => ({
   setSize: (height, width) => dispatch(setCliWidgetSize(height, width)),
   setPos: (x, y) => dispatch(setCliWidgetPos(x, y)),
+  onClose: () => dispatch(toggleWidgetInactive('cli'))
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(withRouter(CliWidget));

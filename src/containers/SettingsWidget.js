@@ -7,12 +7,14 @@ import {
   setSettingsWidgetPos
 } from '../store/actions/settingsWidgetActions';
 import Widget from '../shared/containers/Widget';
+import { toggleWidgetInactive } from '../store/actions/widgetActions';
 
 function SettingsWidget({
   widgetState,
   setSize,
   setPos,
-  active
+  active,
+  onClose
 }) {
   console.log(widgetState);
   return (
@@ -21,6 +23,7 @@ function SettingsWidget({
       setSize={setSize}
       setPos={setPos}
       title="Settings"
+      onClose={onClose}
     >
       Testing
     </Widget>
@@ -35,6 +38,7 @@ const mapStateToProps = (state) => ({
 const mapDispatchToProps = (dispatch, ownProps) => ({
   setSize: (height, width) => dispatch(setSettingsWidgetSize(height, width)),
   setPos: (x, y) => dispatch(setSettingsWidgetPos(x, y)),
+  onClose: () => dispatch(toggleWidgetInactive('settings'))
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(withRouter(SettingsWidget));

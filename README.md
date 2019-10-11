@@ -1,3 +1,7 @@
+# eddyos
+
+Redoing my website, one draft at a time.
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts

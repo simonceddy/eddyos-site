@@ -1,29 +1,29 @@
 import {
   GET_WIDGET_STATUS,
-  SET_SETTINGS_WIDGET_ACTIVE,
-  SET_SETTINGS_WIDGET_INACTIVE,
-  SET_TEXT_WIDGET_ACTIVE,
-  SET_TEXT_WIDGET_INACTIVE
+  TOGGLE_WIDGET_ACTIVE,
+  TOGGLE_WIDGET_INACTIVE
 } from '../actionTypes/widgetActions';
+import updateObject from '../../util/updateObject';
 
 const initialState = {
-  cli: false,
-  text: false,
-  settings: false,
+  cli: true,
+  text: true,
+  settings: true,
+};
+
+const setIfValid = (name, state, toggled) => {
+  if (typeof state[name] !== 'boolean' || typeof toggled !== 'boolean') return state;
+  return updateObject(state, { [name]: toggled });
 };
 
 export default function activeWidgetReducer(state = initialState, action) {
   switch (action.type) {
+    case TOGGLE_WIDGET_ACTIVE:
+      return setIfValid(action.payload.name, state, true);
+    case TOGGLE_WIDGET_INACTIVE:
+      console.log('here');
+      return setIfValid(action.payload.name, state, false);
     case GET_WIDGET_STATUS:
-      return state;
-    case SET_SETTINGS_WIDGET_ACTIVE:
-      return state;
-    case SET_TEXT_WIDGET_ACTIVE:
-      return state;
-    case SET_SETTINGS_WIDGET_INACTIVE:
-      return state;
-    case SET_TEXT_WIDGET_INACTIVE:
-      return state;
     default:
       return state;
   }

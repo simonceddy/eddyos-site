@@ -1,43 +1,25 @@
 /* eslint-disable no-unused-vars */
-import React, { useCallback } from 'react';
-import useWidgetZIndexes from '../hooks/useWidgetZIndexes';
-import useWidgets from '../hooks/useWidgets';
-import { CLI_WIDGET, TEXT_WIDGET, SETTINGS_WIDGET } from '../shared/types/widgetTypes';
+import React from 'react';
+import { connect } from 'react-redux';
+import asyncComponent from '../util/asyncComponent';
+import TextWidget from './TextWidget';
+import SettingsWidget from './SettingsWidget';
 
-function Widgets({ widgets = {} }) {
-  const widgetKeys = Object.keys(widgets);
-  const widgetComponents = Object.entries(widgets);
+const AsyncCliWidget = asyncComponent(() => import('./CliWidget'));
 
-  const { zIndexes, setTop, topWidget } = useWidgetZIndexes();
-  const renderWidgets = useCallback(() => widgetComponents.map((widget, id) => {
-    if (widget[1] === false) return null;
-    const { component, props = {} } = widget[1];
-
-    if (widgetKeys[id] === undefined) {
-      return null;
-    }
-    const key = widgetKeys[id];
-    const wProps = {
-      selected: false,
-      zIndex: zIndexes[key],
-      ...props
-    };
-    if (topWidget !== key) {
-      wProps.selected = true;
-      wProps.onClick = () => setTop(key);
-    }
-    return (
-      <div key={key}>
-        {component(wProps)}
-      </div>
-    );
-  }),
-  [widgetComponents, setTop, zIndexes, topWidget]);
+function Widgets({ active }) {
+  console.log(active);
   return (
     <>
-      {renderWidgets()}
+      {active.cli ? (<AsyncCliWidget />) : null}
+      {active.text ? (<TextWidget />) : null}
+      {active.settings ? (<SettingsWidget />) : null}
     </>
   );
 }
 
-export default Widgets;
+const mapStateToProps = (state) => ({
+  active: state.activeWidgets
+});
+
+export default connect(mapStateToProps)(Widgets);

@@ -8,15 +8,19 @@ import {
 } from '../store/actions/cliWidgetActions';
 import Widget from '../shared/containers/Widget';
 import { toggleWidgetInactive } from '../store/actions/widgetActions';
+import { moveToTop } from '../store/actions/zIndexActions';
 
 function CliWidget({
   widgetState,
   setSize,
   setPos,
   onClose,
-  active
+  active,
+  level,
+  bringToTop,
+  top
 }) {
-  console.log(widgetState);
+  // console.log(widgetState);
   return (
     <Widget
       data={widgetState}
@@ -24,6 +28,12 @@ function CliWidget({
       setPos={setPos}
       title="conEddy"
       onClose={onClose}
+      zIndex={level}
+      onClick={() => {
+        if (top !== 'cli') {
+          bringToTop();
+        }
+      }}
     >
       Testing
     </Widget>
@@ -32,13 +42,16 @@ function CliWidget({
 
 const mapStateToProps = (state) => ({
   widgetState: state.cli,
-  active: state.activeWidgets.cli
+  active: state.activeWidgets.cli,
+  level: state.levels.cli,
+  top: state.levels.top
 });
 
 const mapDispatchToProps = (dispatch, ownProps) => ({
   setSize: (height, width) => dispatch(setCliWidgetSize(height, width)),
   setPos: (x, y) => dispatch(setCliWidgetPos(x, y)),
-  onClose: () => dispatch(toggleWidgetInactive('cli'))
+  onClose: () => dispatch(toggleWidgetInactive('cli')),
+  bringToTop: () => dispatch(moveToTop('cli'))
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(withRouter(CliWidget));

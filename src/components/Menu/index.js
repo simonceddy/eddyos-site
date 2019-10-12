@@ -1,9 +1,11 @@
 import React, { useState } from 'react';
+import { connect } from 'react-redux';
 import MenuButton from './MenuButton';
 import MenuContainer from './MenuContainer';
 import MenuItem from './MenuItem';
+import { resetWidgets } from '../../store/actions/widgetActions';
 
-function Menu() {
+function Menu({ resetAllWidgets }) {
   const [toggled, setToggled] = useState(false);
 
   // console.log('is toggled:', toggled);
@@ -58,6 +60,7 @@ function Menu() {
                     Settings
                   </MenuItem>
                 </ul>
+                <button type="button" onClick={resetAllWidgets}>Reset Widgets</button>
               </MenuContainer>
             </div>
           )
@@ -67,4 +70,8 @@ function Menu() {
   );
 }
 
-export default Menu;
+const mapDispatchToProps = (dispatch) => ({
+  resetAllWidgets: () => dispatch(resetWidgets())
+});
+
+export default connect(() => ({}), mapDispatchToProps)(Menu);

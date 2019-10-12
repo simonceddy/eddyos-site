@@ -4,6 +4,8 @@ import {
   SET_CLI_WIDGET_SIZE
 } from '../actionTypes/widgetActions';
 
+export const HANDLE_CLI_INPUT = 'HANDLE_CLI_INPUT';
+
 export const getCliWidget = () => ({
   type: GET_CLI_WIDGET
 });
@@ -21,5 +23,12 @@ export const setCliWidgetPos = (x, y) => ({
   payload: {
     x,
     y
+  }
+});
+
+export const handleCliInput = (input) => ({
+  type: HANDLE_CLI_INPUT,
+  payload: {
+    input
   }
 });

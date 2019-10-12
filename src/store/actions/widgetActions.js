@@ -1,15 +1,8 @@
 import { TOGGLE_WIDGET_ACTIVE, TOGGLE_WIDGET_INACTIVE } from '../actionTypes/widgetActions';
 
-const GET_WIDGET = 'GET_WIDGET';
-const SET_WIDGET_POS = 'SET_WIDGET_POS';
-const SET_WIDGET_SIZE = 'SET_WIDGET_SIZE';
-
-export const getWidget = (name) => ({
-  type: GET_WIDGET,
-  payload: {
-    name
-  }
-});
+export const RESET_WIDGETS = 'RESET_WIDGETS';
+export const SET_WIDGET_POS = 'SET_WIDGET_POS';
+export const SET_WIDGET_SIZE = 'SET_WIDGET_SIZE';
 
 export const setWidgetSize = (name, height, width) => ({
   type: SET_WIDGET_SIZE,
@@ -41,4 +34,8 @@ export const toggleWidgetInactive = (name) => ({
   payload: {
     name
   }
+});
+
+export const resetWidgets = () => ({
+  type: RESET_WIDGETS
 });

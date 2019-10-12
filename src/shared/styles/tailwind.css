@@ -385,6 +385,7 @@ h3,
 h4,
 h5,
 h6,
+hr,
 figure,
 p,
 pre {
@@ -457,6 +458,14 @@ html {
   border-color: currentColor;
 }
 
+/*
+ * Ensure horizontal rules are visible by default
+ */
+
+hr {
+  border-top-width: 1px;
+}
+
 /**
  * Undo the `border-style: none` reset that Normalize applies to images so that
  * our `border-{width}` utilities have the expected effect.
@@ -477,32 +486,27 @@ textarea {
 
 input::-webkit-input-placeholder,
 textarea::-webkit-input-placeholder {
-  color: inherit;
-  opacity: 0.5;
+  color: #a0aec0;
 }
 
 input::-moz-placeholder,
 textarea::-moz-placeholder {
-  color: inherit;
-  opacity: 0.5;
+  color: #a0aec0;
 }
 
 input:-ms-input-placeholder,
 textarea:-ms-input-placeholder {
-  color: inherit;
-  opacity: 0.5;
+  color: #a0aec0;
 }
 
 input::-ms-input-placeholder,
 textarea::-ms-input-placeholder {
-  color: inherit;
-  opacity: 0.5;
+  color: #a0aec0;
 }
 
 input::placeholder,
 textarea::placeholder {
-  color: inherit;
-  opacity: 0.5;
+  color: #a0aec0;
 }
 
 button,
@@ -597,11 +601,6 @@ img,
 video {
   max-width: 100%;
   height: auto;
-}
-
-.menu {
-  max-width: 350px;
-  min-width: 200px;
 }
 
 .menu-button, .menu-item {
@@ -717,6 +716,52 @@ video {
   .container {
     max-width: 1280px;
   }
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border-width: 0;
+}
+
+.not-sr-only {
+  position: static;
+  width: auto;
+  height: auto;
+  padding: 0;
+  margin: 0;
+  overflow: visible;
+  clip: auto;
+  white-space: normal;
+}
+
+.focus\:sr-only:focus {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border-width: 0;
+}
+
+.focus\:not-sr-only:focus {
+  position: static;
+  width: auto;
+  height: auto;
+  padding: 0;
+  margin: 0;
+  overflow: visible;
+  clip: auto;
+  white-space: normal;
 }
 
 .appearance-none {
@@ -1147,6 +1192,10 @@ video {
 
 .border-dotted {
   border-style: dotted;
+}
+
+.border-double {
+  border-style: double;
 }
 
 .border-none {
@@ -3115,6 +3164,46 @@ video {
   opacity: 1;
 }
 
+.hover\:opacity-0:hover {
+  opacity: 0;
+}
+
+.hover\:opacity-25:hover {
+  opacity: 0.25;
+}
+
+.hover\:opacity-50:hover {
+  opacity: 0.5;
+}
+
+.hover\:opacity-75:hover {
+  opacity: 0.75;
+}
+
+.hover\:opacity-100:hover {
+  opacity: 1;
+}
+
+.focus\:opacity-0:focus {
+  opacity: 0;
+}
+
+.focus\:opacity-25:focus {
+  opacity: 0.25;
+}
+
+.focus\:opacity-50:focus {
+  opacity: 0.5;
+}
+
+.focus\:opacity-75:focus {
+  opacity: 0.75;
+}
+
+.focus\:opacity-100:focus {
+  opacity: 1;
+}
+
 .outline-none {
   outline: 0;
 }
@@ -3747,6 +3836,206 @@ video {
 
 .pl-px {
   padding-left: 1px;
+}
+
+.placeholder-black::-webkit-input-placeholder {
+  color: #000000;
+}
+
+.placeholder-black::-moz-placeholder {
+  color: #000000;
+}
+
+.placeholder-black:-ms-input-placeholder {
+  color: #000000;
+}
+
+.placeholder-black::-ms-input-placeholder {
+  color: #000000;
+}
+
+.placeholder-black::placeholder {
+  color: #000000;
+}
+
+.placeholder-white::-webkit-input-placeholder {
+  color: #FFFFFF;
+}
+
+.placeholder-white::-moz-placeholder {
+  color: #FFFFFF;
+}
+
+.placeholder-white:-ms-input-placeholder {
+  color: #FFFFFF;
+}
+
+.placeholder-white::-ms-input-placeholder {
+  color: #FFFFFF;
+}
+
+.placeholder-white::placeholder {
+  color: #FFFFFF;
+}
+
+.placeholder-green-light::-webkit-input-placeholder {
+  color: #a1ffa5;
+}
+
+.placeholder-green-light::-moz-placeholder {
+  color: #a1ffa5;
+}
+
+.placeholder-green-light:-ms-input-placeholder {
+  color: #a1ffa5;
+}
+
+.placeholder-green-light::-ms-input-placeholder {
+  color: #a1ffa5;
+}
+
+.placeholder-green-light::placeholder {
+  color: #a1ffa5;
+}
+
+.placeholder-green::-webkit-input-placeholder {
+  color: #24f12e;
+}
+
+.placeholder-green::-moz-placeholder {
+  color: #24f12e;
+}
+
+.placeholder-green:-ms-input-placeholder {
+  color: #24f12e;
+}
+
+.placeholder-green::-ms-input-placeholder {
+  color: #24f12e;
+}
+
+.placeholder-green::placeholder {
+  color: #24f12e;
+}
+
+.placeholder-green-dark::-webkit-input-placeholder {
+  color: #18ba20;
+}
+
+.placeholder-green-dark::-moz-placeholder {
+  color: #18ba20;
+}
+
+.placeholder-green-dark:-ms-input-placeholder {
+  color: #18ba20;
+}
+
+.placeholder-green-dark::-ms-input-placeholder {
+  color: #18ba20;
+}
+
+.placeholder-green-dark::placeholder {
+  color: #18ba20;
+}
+
+.focus\:placeholder-black:focus::-webkit-input-placeholder {
+  color: #000000;
+}
+
+.focus\:placeholder-black:focus::-moz-placeholder {
+  color: #000000;
+}
+
+.focus\:placeholder-black:focus:-ms-input-placeholder {
+  color: #000000;
+}
+
+.focus\:placeholder-black:focus::-ms-input-placeholder {
+  color: #000000;
+}
+
+.focus\:placeholder-black:focus::placeholder {
+  color: #000000;
+}
+
+.focus\:placeholder-white:focus::-webkit-input-placeholder {
+  color: #FFFFFF;
+}
+
+.focus\:placeholder-white:focus::-moz-placeholder {
+  color: #FFFFFF;
+}
+
+.focus\:placeholder-white:focus:-ms-input-placeholder {
+  color: #FFFFFF;
+}
+
+.focus\:placeholder-white:focus::-ms-input-placeholder {
+  color: #FFFFFF;
+}
+
+.focus\:placeholder-white:focus::placeholder {
+  color: #FFFFFF;
+}
+
+.focus\:placeholder-green-light:focus::-webkit-input-placeholder {
+  color: #a1ffa5;
+}
+
+.focus\:placeholder-green-light:focus::-moz-placeholder {
+  color: #a1ffa5;
+}
+
+.focus\:placeholder-green-light:focus:-ms-input-placeholder {
+  color: #a1ffa5;
+}
+
+.focus\:placeholder-green-light:focus::-ms-input-placeholder {
+  color: #a1ffa5;
+}
+
+.focus\:placeholder-green-light:focus::placeholder {
+  color: #a1ffa5;
+}
+
+.focus\:placeholder-green:focus::-webkit-input-placeholder {
+  color: #24f12e;
+}
+
+.focus\:placeholder-green:focus::-moz-placeholder {
+  color: #24f12e;
+}
+
+.focus\:placeholder-green:focus:-ms-input-placeholder {
+  color: #24f12e;
+}
+
+.focus\:placeholder-green:focus::-ms-input-placeholder {
+  color: #24f12e;
+}
+
+.focus\:placeholder-green:focus::placeholder {
+  color: #24f12e;
+}
+
+.focus\:placeholder-green-dark:focus::-webkit-input-placeholder {
+  color: #18ba20;
+}
+
+.focus\:placeholder-green-dark:focus::-moz-placeholder {
+  color: #18ba20;
+}
+
+.focus\:placeholder-green-dark:focus:-ms-input-placeholder {
+  color: #18ba20;
+}
+
+.focus\:placeholder-green-dark:focus::-ms-input-placeholder {
+  color: #18ba20;
+}
+
+.focus\:placeholder-green-dark:focus::placeholder {
+  color: #18ba20;
 }
 
 .pointer-events-none {
@@ -4502,6 +4791,52 @@ video {
 }
 
 @media (min-width: 640px) {
+  .sm\:sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border-width: 0;
+  }
+
+  .sm\:not-sr-only {
+    position: static;
+    width: auto;
+    height: auto;
+    padding: 0;
+    margin: 0;
+    overflow: visible;
+    clip: auto;
+    white-space: normal;
+  }
+
+  .sm\:focus\:sr-only:focus {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border-width: 0;
+  }
+
+  .sm\:focus\:not-sr-only:focus {
+    position: static;
+    width: auto;
+    height: auto;
+    padding: 0;
+    margin: 0;
+    overflow: visible;
+    clip: auto;
+    white-space: normal;
+  }
+
   .sm\:appearance-none {
     -webkit-appearance: none;
        -moz-appearance: none;
@@ -4930,6 +5265,10 @@ video {
 
   .sm\:border-dotted {
     border-style: dotted;
+  }
+
+  .sm\:border-double {
+    border-style: double;
   }
 
   .sm\:border-none {
@@ -6898,6 +7237,46 @@ video {
     opacity: 1;
   }
 
+  .sm\:hover\:opacity-0:hover {
+    opacity: 0;
+  }
+
+  .sm\:hover\:opacity-25:hover {
+    opacity: 0.25;
+  }
+
+  .sm\:hover\:opacity-50:hover {
+    opacity: 0.5;
+  }
+
+  .sm\:hover\:opacity-75:hover {
+    opacity: 0.75;
+  }
+
+  .sm\:hover\:opacity-100:hover {
+    opacity: 1;
+  }
+
+  .sm\:focus\:opacity-0:focus {
+    opacity: 0;
+  }
+
+  .sm\:focus\:opacity-25:focus {
+    opacity: 0.25;
+  }
+
+  .sm\:focus\:opacity-50:focus {
+    opacity: 0.5;
+  }
+
+  .sm\:focus\:opacity-75:focus {
+    opacity: 0.75;
+  }
+
+  .sm\:focus\:opacity-100:focus {
+    opacity: 1;
+  }
+
   .sm\:outline-none {
     outline: 0;
   }
@@ -7530,6 +7909,206 @@ video {
 
   .sm\:pl-px {
     padding-left: 1px;
+  }
+
+  .sm\:placeholder-black::-webkit-input-placeholder {
+    color: #000000;
+  }
+
+  .sm\:placeholder-black::-moz-placeholder {
+    color: #000000;
+  }
+
+  .sm\:placeholder-black:-ms-input-placeholder {
+    color: #000000;
+  }
+
+  .sm\:placeholder-black::-ms-input-placeholder {
+    color: #000000;
+  }
+
+  .sm\:placeholder-black::placeholder {
+    color: #000000;
+  }
+
+  .sm\:placeholder-white::-webkit-input-placeholder {
+    color: #FFFFFF;
+  }
+
+  .sm\:placeholder-white::-moz-placeholder {
+    color: #FFFFFF;
+  }
+
+  .sm\:placeholder-white:-ms-input-placeholder {
+    color: #FFFFFF;
+  }
+
+  .sm\:placeholder-white::-ms-input-placeholder {
+    color: #FFFFFF;
+  }
+
+  .sm\:placeholder-white::placeholder {
+    color: #FFFFFF;
+  }
+
+  .sm\:placeholder-green-light::-webkit-input-placeholder {
+    color: #a1ffa5;
+  }
+
+  .sm\:placeholder-green-light::-moz-placeholder {
+    color: #a1ffa5;
+  }
+
+  .sm\:placeholder-green-light:-ms-input-placeholder {
+    color: #a1ffa5;
+  }
+
+  .sm\:placeholder-green-light::-ms-input-placeholder {
+    color: #a1ffa5;
+  }
+
+  .sm\:placeholder-green-light::placeholder {
+    color: #a1ffa5;
+  }
+
+  .sm\:placeholder-green::-webkit-input-placeholder {
+    color: #24f12e;
+  }
+
+  .sm\:placeholder-green::-moz-placeholder {
+    color: #24f12e;
+  }
+
+  .sm\:placeholder-green:-ms-input-placeholder {
+    color: #24f12e;
+  }
+
+  .sm\:placeholder-green::-ms-input-placeholder {
+    color: #24f12e;
+  }
+
+  .sm\:placeholder-green::placeholder {
+    color: #24f12e;
+  }
+
+  .sm\:placeholder-green-dark::-webkit-input-placeholder {
+    color: #18ba20;
+  }
+
+  .sm\:placeholder-green-dark::-moz-placeholder {
+    color: #18ba20;
+  }
+
+  .sm\:placeholder-green-dark:-ms-input-placeholder {
+    color: #18ba20;
+  }
+
+  .sm\:placeholder-green-dark::-ms-input-placeholder {
+    color: #18ba20;
+  }
+
+  .sm\:placeholder-green-dark::placeholder {
+    color: #18ba20;
+  }
+
+  .sm\:focus\:placeholder-black:focus::-webkit-input-placeholder {
+    color: #000000;
+  }
+
+  .sm\:focus\:placeholder-black:focus::-moz-placeholder {
+    color: #000000;
+  }
+
+  .sm\:focus\:placeholder-black:focus:-ms-input-placeholder {
+    color: #000000;
+  }
+
+  .sm\:focus\:placeholder-black:focus::-ms-input-placeholder {
+    color: #000000;
+  }
+
+  .sm\:focus\:placeholder-black:focus::placeholder {
+    color: #000000;
+  }
+
+  .sm\:focus\:placeholder-white:focus::-webkit-input-placeholder {
+    color: #FFFFFF;
+  }
+
+  .sm\:focus\:placeholder-white:focus::-moz-placeholder {
+    color: #FFFFFF;
+  }
+
+  .sm\:focus\:placeholder-white:focus:-ms-input-placeholder {
+    color: #FFFFFF;
+  }
+
+  .sm\:focus\:placeholder-white:focus::-ms-input-placeholder {
+    color: #FFFFFF;
+  }
+
+  .sm\:focus\:placeholder-white:focus::placeholder {
+    color: #FFFFFF;
+  }
+
+  .sm\:focus\:placeholder-green-light:focus::-webkit-input-placeholder {
+    color: #a1ffa5;
+  }
+
+  .sm\:focus\:placeholder-green-light:focus::-moz-placeholder {
+    color: #a1ffa5;
+  }
+
+  .sm\:focus\:placeholder-green-light:focus:-ms-input-placeholder {
+    color: #a1ffa5;
+  }
+
+  .sm\:focus\:placeholder-green-light:focus::-ms-input-placeholder {
+    color: #a1ffa5;
+  }
+
+  .sm\:focus\:placeholder-green-light:focus::placeholder {
+    color: #a1ffa5;
+  }
+
+  .sm\:focus\:placeholder-green:focus::-webkit-input-placeholder {
+    color: #24f12e;
+  }
+
+  .sm\:focus\:placeholder-green:focus::-moz-placeholder {
+    color: #24f12e;
+  }
+
+  .sm\:focus\:placeholder-green:focus:-ms-input-placeholder {
+    color: #24f12e;
+  }
+
+  .sm\:focus\:placeholder-green:focus::-ms-input-placeholder {
+    color: #24f12e;
+  }
+
+  .sm\:focus\:placeholder-green:focus::placeholder {
+    color: #24f12e;
+  }
+
+  .sm\:focus\:placeholder-green-dark:focus::-webkit-input-placeholder {
+    color: #18ba20;
+  }
+
+  .sm\:focus\:placeholder-green-dark:focus::-moz-placeholder {
+    color: #18ba20;
+  }
+
+  .sm\:focus\:placeholder-green-dark:focus:-ms-input-placeholder {
+    color: #18ba20;
+  }
+
+  .sm\:focus\:placeholder-green-dark:focus::-ms-input-placeholder {
+    color: #18ba20;
+  }
+
+  .sm\:focus\:placeholder-green-dark:focus::placeholder {
+    color: #18ba20;
   }
 
   .sm\:pointer-events-none {
@@ -8286,6 +8865,52 @@ video {
 }
 
 @media (min-width: 768px) {
+  .md\:sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border-width: 0;
+  }
+
+  .md\:not-sr-only {
+    position: static;
+    width: auto;
+    height: auto;
+    padding: 0;
+    margin: 0;
+    overflow: visible;
+    clip: auto;
+    white-space: normal;
+  }
+
+  .md\:focus\:sr-only:focus {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border-width: 0;
+  }
+
+  .md\:focus\:not-sr-only:focus {
+    position: static;
+    width: auto;
+    height: auto;
+    padding: 0;
+    margin: 0;
+    overflow: visible;
+    clip: auto;
+    white-space: normal;
+  }
+
   .md\:appearance-none {
     -webkit-appearance: none;
        -moz-appearance: none;
@@ -8714,6 +9339,10 @@ video {
 
   .md\:border-dotted {
     border-style: dotted;
+  }
+
+  .md\:border-double {
+    border-style: double;
   }
 
   .md\:border-none {
@@ -10682,6 +11311,46 @@ video {
     opacity: 1;
   }
 
+  .md\:hover\:opacity-0:hover {
+    opacity: 0;
+  }
+
+  .md\:hover\:opacity-25:hover {
+    opacity: 0.25;
+  }
+
+  .md\:hover\:opacity-50:hover {
+    opacity: 0.5;
+  }
+
+  .md\:hover\:opacity-75:hover {
+    opacity: 0.75;
+  }
+
+  .md\:hover\:opacity-100:hover {
+    opacity: 1;
+  }
+
+  .md\:focus\:opacity-0:focus {
+    opacity: 0;
+  }
+
+  .md\:focus\:opacity-25:focus {
+    opacity: 0.25;
+  }
+
+  .md\:focus\:opacity-50:focus {
+    opacity: 0.5;
+  }
+
+  .md\:focus\:opacity-75:focus {
+    opacity: 0.75;
+  }
+
+  .md\:focus\:opacity-100:focus {
+    opacity: 1;
+  }
+
   .md\:outline-none {
     outline: 0;
   }
@@ -11314,6 +11983,206 @@ video {
 
   .md\:pl-px {
     padding-left: 1px;
+  }
+
+  .md\:placeholder-black::-webkit-input-placeholder {
+    color: #000000;
+  }
+
+  .md\:placeholder-black::-moz-placeholder {
+    color: #000000;
+  }
+
+  .md\:placeholder-black:-ms-input-placeholder {
+    color: #000000;
+  }
+
+  .md\:placeholder-black::-ms-input-placeholder {
+    color: #000000;
+  }
+
+  .md\:placeholder-black::placeholder {
+    color: #000000;
+  }
+
+  .md\:placeholder-white::-webkit-input-placeholder {
+    color: #FFFFFF;
+  }
+
+  .md\:placeholder-white::-moz-placeholder {
+    color: #FFFFFF;
+  }
+
+  .md\:placeholder-white:-ms-input-placeholder {
+    color: #FFFFFF;
+  }
+
+  .md\:placeholder-white::-ms-input-placeholder {
+    color: #FFFFFF;
+  }
+
+  .md\:placeholder-white::placeholder {
+    color: #FFFFFF;
+  }
+
+  .md\:placeholder-green-light::-webkit-input-placeholder {
+    color: #a1ffa5;
+  }
+
+  .md\:placeholder-green-light::-moz-placeholder {
+    color: #a1ffa5;
+  }
+
+  .md\:placeholder-green-light:-ms-input-placeholder {
+    color: #a1ffa5;
+  }
+
+  .md\:placeholder-green-light::-ms-input-placeholder {
+    color: #a1ffa5;
+  }
+
+  .md\:placeholder-green-light::placeholder {
+    color: #a1ffa5;
+  }
+
+  .md\:placeholder-green::-webkit-input-placeholder {
+    color: #24f12e;
+  }
+
+  .md\:placeholder-green::-moz-placeholder {
+    color: #24f12e;
+  }
+
+  .md\:placeholder-green:-ms-input-placeholder {
+    color: #24f12e;
+  }
+
+  .md\:placeholder-green::-ms-input-placeholder {
+    color: #24f12e;
+  }
+
+  .md\:placeholder-green::placeholder {
+    color: #24f12e;
+  }
+
+  .md\:placeholder-green-dark::-webkit-input-placeholder {
+    color: #18ba20;
+  }
+
+  .md\:placeholder-green-dark::-moz-placeholder {
+    color: #18ba20;
+  }
+
+  .md\:placeholder-green-dark:-ms-input-placeholder {
+    color: #18ba20;
+  }
+
+  .md\:placeholder-green-dark::-ms-input-placeholder {
+    color: #18ba20;
+  }
+
+  .md\:placeholder-green-dark::placeholder {
+    color: #18ba20;
+  }
+
+  .md\:focus\:placeholder-black:focus::-webkit-input-placeholder {
+    color: #000000;
+  }
+
+  .md\:focus\:placeholder-black:focus::-moz-placeholder {
+    color: #000000;
+  }
+
+  .md\:focus\:placeholder-black:focus:-ms-input-placeholder {
+    color: #000000;
+  }
+
+  .md\:focus\:placeholder-black:focus::-ms-input-placeholder {
+    color: #000000;
+  }
+
+  .md\:focus\:placeholder-black:focus::placeholder {
+    color: #000000;
+  }
+
+  .md\:focus\:placeholder-white:focus::-webkit-input-placeholder {
+    color: #FFFFFF;
+  }
+
+  .md\:focus\:placeholder-white:focus::-moz-placeholder {
+    color: #FFFFFF;
+  }
+
+  .md\:focus\:placeholder-white:focus:-ms-input-placeholder {
+    color: #FFFFFF;
+  }
+
+  .md\:focus\:placeholder-white:focus::-ms-input-placeholder {
+    color: #FFFFFF;
+  }
+
+  .md\:focus\:placeholder-white:focus::placeholder {
+    color: #FFFFFF;
+  }
+
+  .md\:focus\:placeholder-green-light:focus::-webkit-input-placeholder {
+    color: #a1ffa5;
+  }
+
+  .md\:focus\:placeholder-green-light:focus::-moz-placeholder {
+    color: #a1ffa5;
+  }
+
+  .md\:focus\:placeholder-green-light:focus:-ms-input-placeholder {
+    color: #a1ffa5;
+  }
+
+  .md\:focus\:placeholder-green-light:focus::-ms-input-placeholder {
+    color: #a1ffa5;
+  }
+
+  .md\:focus\:placeholder-green-light:focus::placeholder {
+    color: #a1ffa5;
+  }
+
+  .md\:focus\:placeholder-green:focus::-webkit-input-placeholder {
+    color: #24f12e;
+  }
+
+  .md\:focus\:placeholder-green:focus::-moz-placeholder {
+    color: #24f12e;
+  }
+
+  .md\:focus\:placeholder-green:focus:-ms-input-placeholder {
+    color: #24f12e;
+  }
+
+  .md\:focus\:placeholder-green:focus::-ms-input-placeholder {
+    color: #24f12e;
+  }
+
+  .md\:focus\:placeholder-green:focus::placeholder {
+    color: #24f12e;
+  }
+
+  .md\:focus\:placeholder-green-dark:focus::-webkit-input-placeholder {
+    color: #18ba20;
+  }
+
+  .md\:focus\:placeholder-green-dark:focus::-moz-placeholder {
+    color: #18ba20;
+  }
+
+  .md\:focus\:placeholder-green-dark:focus:-ms-input-placeholder {
+    color: #18ba20;
+  }
+
+  .md\:focus\:placeholder-green-dark:focus::-ms-input-placeholder {
+    color: #18ba20;
+  }
+
+  .md\:focus\:placeholder-green-dark:focus::placeholder {
+    color: #18ba20;
   }
 
   .md\:pointer-events-none {
@@ -12070,6 +12939,52 @@ video {
 }
 
 @media (min-width: 1024px) {
+  .lg\:sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border-width: 0;
+  }
+
+  .lg\:not-sr-only {
+    position: static;
+    width: auto;
+    height: auto;
+    padding: 0;
+    margin: 0;
+    overflow: visible;
+    clip: auto;
+    white-space: normal;
+  }
+
+  .lg\:focus\:sr-only:focus {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border-width: 0;
+  }
+
+  .lg\:focus\:not-sr-only:focus {
+    position: static;
+    width: auto;
+    height: auto;
+    padding: 0;
+    margin: 0;
+    overflow: visible;
+    clip: auto;
+    white-space: normal;
+  }
+
   .lg\:appearance-none {
     -webkit-appearance: none;
        -moz-appearance: none;
@@ -12498,6 +13413,10 @@ video {
 
   .lg\:border-dotted {
     border-style: dotted;
+  }
+
+  .lg\:border-double {
+    border-style: double;
   }
 
   .lg\:border-none {
@@ -14466,6 +15385,46 @@ video {
     opacity: 1;
   }
 
+  .lg\:hover\:opacity-0:hover {
+    opacity: 0;
+  }
+
+  .lg\:hover\:opacity-25:hover {
+    opacity: 0.25;
+  }
+
+  .lg\:hover\:opacity-50:hover {
+    opacity: 0.5;
+  }
+
+  .lg\:hover\:opacity-75:hover {
+    opacity: 0.75;
+  }
+
+  .lg\:hover\:opacity-100:hover {
+    opacity: 1;
+  }
+
+  .lg\:focus\:opacity-0:focus {
+    opacity: 0;
+  }
+
+  .lg\:focus\:opacity-25:focus {
+    opacity: 0.25;
+  }
+
+  .lg\:focus\:opacity-50:focus {
+    opacity: 0.5;
+  }
+
+  .lg\:focus\:opacity-75:focus {
+    opacity: 0.75;
+  }
+
+  .lg\:focus\:opacity-100:focus {
+    opacity: 1;
+  }
+
   .lg\:outline-none {
     outline: 0;
   }
@@ -15098,6 +16057,206 @@ video {
 
   .lg\:pl-px {
     padding-left: 1px;
+  }
+
+  .lg\:placeholder-black::-webkit-input-placeholder {
+    color: #000000;
+  }
+
+  .lg\:placeholder-black::-moz-placeholder {
+    color: #000000;
+  }
+
+  .lg\:placeholder-black:-ms-input-placeholder {
+    color: #000000;
+  }
+
+  .lg\:placeholder-black::-ms-input-placeholder {
+    color: #000000;
+  }
+
+  .lg\:placeholder-black::placeholder {
+    color: #000000;
+  }
+
+  .lg\:placeholder-white::-webkit-input-placeholder {
+    color: #FFFFFF;
+  }
+
+  .lg\:placeholder-white::-moz-placeholder {
+    color: #FFFFFF;
+  }
+
+  .lg\:placeholder-white:-ms-input-placeholder {
+    color: #FFFFFF;
+  }
+
+  .lg\:placeholder-white::-ms-input-placeholder {
+    color: #FFFFFF;
+  }
+
+  .lg\:placeholder-white::placeholder {
+    color: #FFFFFF;
+  }
+
+  .lg\:placeholder-green-light::-webkit-input-placeholder {
+    color: #a1ffa5;
+  }
+
+  .lg\:placeholder-green-light::-moz-placeholder {
+    color: #a1ffa5;
+  }
+
+  .lg\:placeholder-green-light:-ms-input-placeholder {
+    color: #a1ffa5;
+  }
+
+  .lg\:placeholder-green-light::-ms-input-placeholder {
+    color: #a1ffa5;
+  }
+
+  .lg\:placeholder-green-light::placeholder {
+    color: #a1ffa5;
+  }
+
+  .lg\:placeholder-green::-webkit-input-placeholder {
+    color: #24f12e;
+  }
+
+  .lg\:placeholder-green::-moz-placeholder {
+    color: #24f12e;
+  }
+
+  .lg\:placeholder-green:-ms-input-placeholder {
+    color: #24f12e;
+  }
+
+  .lg\:placeholder-green::-ms-input-placeholder {
+    color: #24f12e;
+  }
+
+  .lg\:placeholder-green::placeholder {
+    color: #24f12e;
+  }
+
+  .lg\:placeholder-green-dark::-webkit-input-placeholder {
+    color: #18ba20;
+  }
+
+  .lg\:placeholder-green-dark::-moz-placeholder {
+    color: #18ba20;
+  }
+
+  .lg\:placeholder-green-dark:-ms-input-placeholder {
+    color: #18ba20;
+  }
+
+  .lg\:placeholder-green-dark::-ms-input-placeholder {
+    color: #18ba20;
+  }
+
+  .lg\:placeholder-green-dark::placeholder {
+    color: #18ba20;
+  }
+
+  .lg\:focus\:placeholder-black:focus::-webkit-input-placeholder {
+    color: #000000;
+  }
+
+  .lg\:focus\:placeholder-black:focus::-moz-placeholder {
+    color: #000000;
+  }
+
+  .lg\:focus\:placeholder-black:focus:-ms-input-placeholder {
+    color: #000000;
+  }
+
+  .lg\:focus\:placeholder-black:focus::-ms-input-placeholder {
+    color: #000000;
+  }
+
+  .lg\:focus\:placeholder-black:focus::placeholder {
+    color: #000000;
+  }
+
+  .lg\:focus\:placeholder-white:focus::-webkit-input-placeholder {
+    color: #FFFFFF;
+  }
+
+  .lg\:focus\:placeholder-white:focus::-moz-placeholder {
+    color: #FFFFFF;
+  }
+
+  .lg\:focus\:placeholder-white:focus:-ms-input-placeholder {
+    color: #FFFFFF;
+  }
+
+  .lg\:focus\:placeholder-white:focus::-ms-input-placeholder {
+    color: #FFFFFF;
+  }
+
+  .lg\:focus\:placeholder-white:focus::placeholder {
+    color: #FFFFFF;
+  }
+
+  .lg\:focus\:placeholder-green-light:focus::-webkit-input-placeholder {
+    color: #a1ffa5;
+  }
+
+  .lg\:focus\:placeholder-green-light:focus::-moz-placeholder {
+    color: #a1ffa5;
+  }
+
+  .lg\:focus\:placeholder-green-light:focus:-ms-input-placeholder {
+    color: #a1ffa5;
+  }
+
+  .lg\:focus\:placeholder-green-light:focus::-ms-input-placeholder {
+    color: #a1ffa5;
+  }
+
+  .lg\:focus\:placeholder-green-light:focus::placeholder {
+    color: #a1ffa5;
+  }
+
+  .lg\:focus\:placeholder-green:focus::-webkit-input-placeholder {
+    color: #24f12e;
+  }
+
+  .lg\:focus\:placeholder-green:focus::-moz-placeholder {
+    color: #24f12e;
+  }
+
+  .lg\:focus\:placeholder-green:focus:-ms-input-placeholder {
+    color: #24f12e;
+  }
+
+  .lg\:focus\:placeholder-green:focus::-ms-input-placeholder {
+    color: #24f12e;
+  }
+
+  .lg\:focus\:placeholder-green:focus::placeholder {
+    color: #24f12e;
+  }
+
+  .lg\:focus\:placeholder-green-dark:focus::-webkit-input-placeholder {
+    color: #18ba20;
+  }
+
+  .lg\:focus\:placeholder-green-dark:focus::-moz-placeholder {
+    color: #18ba20;
+  }
+
+  .lg\:focus\:placeholder-green-dark:focus:-ms-input-placeholder {
+    color: #18ba20;
+  }
+
+  .lg\:focus\:placeholder-green-dark:focus::-ms-input-placeholder {
+    color: #18ba20;
+  }
+
+  .lg\:focus\:placeholder-green-dark:focus::placeholder {
+    color: #18ba20;
   }
 
   .lg\:pointer-events-none {
@@ -15854,6 +17013,52 @@ video {
 }
 
 @media (min-width: 1280px) {
+  .xl\:sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border-width: 0;
+  }
+
+  .xl\:not-sr-only {
+    position: static;
+    width: auto;
+    height: auto;
+    padding: 0;
+    margin: 0;
+    overflow: visible;
+    clip: auto;
+    white-space: normal;
+  }
+
+  .xl\:focus\:sr-only:focus {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border-width: 0;
+  }
+
+  .xl\:focus\:not-sr-only:focus {
+    position: static;
+    width: auto;
+    height: auto;
+    padding: 0;
+    margin: 0;
+    overflow: visible;
+    clip: auto;
+    white-space: normal;
+  }
+
   .xl\:appearance-none {
     -webkit-appearance: none;
        -moz-appearance: none;
@@ -16282,6 +17487,10 @@ video {
 
   .xl\:border-dotted {
     border-style: dotted;
+  }
+
+  .xl\:border-double {
+    border-style: double;
   }
 
   .xl\:border-none {
@@ -18250,6 +19459,46 @@ video {
     opacity: 1;
   }
 
+  .xl\:hover\:opacity-0:hover {
+    opacity: 0;
+  }
+
+  .xl\:hover\:opacity-25:hover {
+    opacity: 0.25;
+  }
+
+  .xl\:hover\:opacity-50:hover {
+    opacity: 0.5;
+  }
+
+  .xl\:hover\:opacity-75:hover {
+    opacity: 0.75;
+  }
+
+  .xl\:hover\:opacity-100:hover {
+    opacity: 1;
+  }
+
+  .xl\:focus\:opacity-0:focus {
+    opacity: 0;
+  }
+
+  .xl\:focus\:opacity-25:focus {
+    opacity: 0.25;
+  }
+
+  .xl\:focus\:opacity-50:focus {
+    opacity: 0.5;
+  }
+
+  .xl\:focus\:opacity-75:focus {
+    opacity: 0.75;
+  }
+
+  .xl\:focus\:opacity-100:focus {
+    opacity: 1;
+  }
+
   .xl\:outline-none {
     outline: 0;
   }
@@ -18882,6 +20131,206 @@ video {
 
   .xl\:pl-px {
     padding-left: 1px;
+  }
+
+  .xl\:placeholder-black::-webkit-input-placeholder {
+    color: #000000;
+  }
+
+  .xl\:placeholder-black::-moz-placeholder {
+    color: #000000;
+  }
+
+  .xl\:placeholder-black:-ms-input-placeholder {
+    color: #000000;
+  }
+
+  .xl\:placeholder-black::-ms-input-placeholder {
+    color: #000000;
+  }
+
+  .xl\:placeholder-black::placeholder {
+    color: #000000;
+  }
+
+  .xl\:placeholder-white::-webkit-input-placeholder {
+    color: #FFFFFF;
+  }
+
+  .xl\:placeholder-white::-moz-placeholder {
+    color: #FFFFFF;
+  }
+
+  .xl\:placeholder-white:-ms-input-placeholder {
+    color: #FFFFFF;
+  }
+
+  .xl\:placeholder-white::-ms-input-placeholder {
+    color: #FFFFFF;
+  }
+
+  .xl\:placeholder-white::placeholder {
+    color: #FFFFFF;
+  }
+
+  .xl\:placeholder-green-light::-webkit-input-placeholder {
+    color: #a1ffa5;
+  }
+
+  .xl\:placeholder-green-light::-moz-placeholder {
+    color: #a1ffa5;
+  }
+
+  .xl\:placeholder-green-light:-ms-input-placeholder {
+    color: #a1ffa5;
+  }
+
+  .xl\:placeholder-green-light::-ms-input-placeholder {
+    color: #a1ffa5;
+  }
+
+  .xl\:placeholder-green-light::placeholder {
+    color: #a1ffa5;
+  }
+
+  .xl\:placeholder-green::-webkit-input-placeholder {
+    color: #24f12e;
+  }
+
+  .xl\:placeholder-green::-moz-placeholder {
+    color: #24f12e;
+  }
+
+  .xl\:placeholder-green:-ms-input-placeholder {
+    color: #24f12e;
+  }
+
+  .xl\:placeholder-green::-ms-input-placeholder {
+    color: #24f12e;
+  }
+
+  .xl\:placeholder-green::placeholder {
+    color: #24f12e;
+  }
+
+  .xl\:placeholder-green-dark::-webkit-input-placeholder {
+    color: #18ba20;
+  }
+
+  .xl\:placeholder-green-dark::-moz-placeholder {
+    color: #18ba20;
+  }
+
+  .xl\:placeholder-green-dark:-ms-input-placeholder {
+    color: #18ba20;
+  }
+
+  .xl\:placeholder-green-dark::-ms-input-placeholder {
+    color: #18ba20;
+  }
+
+  .xl\:placeholder-green-dark::placeholder {
+    color: #18ba20;
+  }
+
+  .xl\:focus\:placeholder-black:focus::-webkit-input-placeholder {
+    color: #000000;
+  }
+
+  .xl\:focus\:placeholder-black:focus::-moz-placeholder {
+    color: #000000;
+  }
+
+  .xl\:focus\:placeholder-black:focus:-ms-input-placeholder {
+    color: #000000;
+  }
+
+  .xl\:focus\:placeholder-black:focus::-ms-input-placeholder {
+    color: #000000;
+  }
+
+  .xl\:focus\:placeholder-black:focus::placeholder {
+    color: #000000;
+  }
+
+  .xl\:focus\:placeholder-white:focus::-webkit-input-placeholder {
+    color: #FFFFFF;
+  }
+
+  .xl\:focus\:placeholder-white:focus::-moz-placeholder {
+    color: #FFFFFF;
+  }
+
+  .xl\:focus\:placeholder-white:focus:-ms-input-placeholder {
+    color: #FFFFFF;
+  }
+
+  .xl\:focus\:placeholder-white:focus::-ms-input-placeholder {
+    color: #FFFFFF;
+  }
+
+  .xl\:focus\:placeholder-white:focus::placeholder {
+    color: #FFFFFF;
+  }
+
+  .xl\:focus\:placeholder-green-light:focus::-webkit-input-placeholder {
+    color: #a1ffa5;
+  }
+
+  .xl\:focus\:placeholder-green-light:focus::-moz-placeholder {
+    color: #a1ffa5;
+  }
+
+  .xl\:focus\:placeholder-green-light:focus:-ms-input-placeholder {
+    color: #a1ffa5;
+  }
+
+  .xl\:focus\:placeholder-green-light:focus::-ms-input-placeholder {
+    color: #a1ffa5;
+  }
+
+  .xl\:focus\:placeholder-green-light:focus::placeholder {
+    color: #a1ffa5;
+  }
+
+  .xl\:focus\:placeholder-green:focus::-webkit-input-placeholder {
+    color: #24f12e;
+  }
+
+  .xl\:focus\:placeholder-green:focus::-moz-placeholder {
+    color: #24f12e;
+  }
+
+  .xl\:focus\:placeholder-green:focus:-ms-input-placeholder {
+    color: #24f12e;
+  }
+
+  .xl\:focus\:placeholder-green:focus::-ms-input-placeholder {
+    color: #24f12e;
+  }
+
+  .xl\:focus\:placeholder-green:focus::placeholder {
+    color: #24f12e;
+  }
+
+  .xl\:focus\:placeholder-green-dark:focus::-webkit-input-placeholder {
+    color: #18ba20;
+  }
+
+  .xl\:focus\:placeholder-green-dark:focus::-moz-placeholder {
+    color: #18ba20;
+  }
+
+  .xl\:focus\:placeholder-green-dark:focus:-ms-input-placeholder {
+    color: #18ba20;
+  }
+
+  .xl\:focus\:placeholder-green-dark:focus::-ms-input-placeholder {
+    color: #18ba20;
+  }
+
+  .xl\:focus\:placeholder-green-dark:focus::placeholder {
+    color: #18ba20;
   }
 
   .xl\:pointer-events-none {

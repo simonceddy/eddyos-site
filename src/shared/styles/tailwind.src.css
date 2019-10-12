@@ -1,10 +1,5 @@
 @tailwind base;
 
-.menu {
-  max-width: 350px;
-  min-width: 200px;
-}
-
 .menu-button, .menu-item {
   @apply bg-green text-black m-2 border border-green border-4 no-underline;
 }

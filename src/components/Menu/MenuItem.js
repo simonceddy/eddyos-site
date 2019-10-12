@@ -12,7 +12,7 @@ function MenuItem({
       <StyledLink
         to={to}
         exact={exact}
-        className="block p-2 no-underline uppercase text-left"
+        className="block px-6 no-underline uppercase text-left"
         onClick={onClick}
       >
         {children}

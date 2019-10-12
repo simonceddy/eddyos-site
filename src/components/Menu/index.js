@@ -3,9 +3,9 @@ import { connect } from 'react-redux';
 import MenuButton from './MenuButton';
 import MenuContainer from './MenuContainer';
 import MenuItem from './MenuItem';
-import { resetWidgets } from '../../store/actions/widgetActions';
+import { resetWidgets, toggleWidgetActive } from '../../store/actions/widgetActions';
 
-function Menu({ resetAllWidgets }) {
+function Menu({ resetAllWidgets, openSettings }) {
   const [toggled, setToggled] = useState(false);
 
   // console.log('is toggled:', toggled);
@@ -16,10 +16,7 @@ function Menu({ resetAllWidgets }) {
         toggled
           ? (
             <div
-              className="absolute z-50"
-              style={{
-                bottom: '50px'
-              }}
+              className="absolute z-50 menu text-2xl"
             >
               <MenuContainer>
                 <ul className="w-full">
@@ -60,6 +57,7 @@ function Menu({ resetAllWidgets }) {
                     Settings
                   </MenuItem>
                 </ul>
+                <button type="button" onClick={openSettings}>Settings</button>
                 <button type="button" onClick={resetAllWidgets}>Reset Widgets</button>
               </MenuContainer>
             </div>
@@ -71,7 +69,8 @@ function Menu({ resetAllWidgets }) {
 }
 
 const mapDispatchToProps = (dispatch) => ({
-  resetAllWidgets: () => dispatch(resetWidgets())
+  resetAllWidgets: () => dispatch(resetWidgets()),
+  openSettings: () => dispatch(toggleWidgetActive('settings'))
 });
 
 export default connect(() => ({}), mapDispatchToProps)(Menu);

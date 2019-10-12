@@ -12,7 +12,7 @@ const StyledTaskbar = styled.div`
 
 function Toolbar() {
   return (
-    <StyledTaskbar className="p-1 flex flex-row justify-between items-center">
+    <StyledTaskbar className="p-1 flex flex-row justify-between items-center z-40">
       <Menu />
     </StyledTaskbar>
   );

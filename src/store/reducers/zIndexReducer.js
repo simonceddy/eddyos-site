@@ -21,7 +21,6 @@ const setToTop = (name, state) => {
 export default function zIndexReducer(state = initialState, action) {
   switch (action.type) {
     case MOVE_TO_TOP:
-      // console.log('here');
       return setToTop(action.payload.name, state);
     default:
       return state;

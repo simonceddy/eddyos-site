@@ -11,20 +11,20 @@
     "monorouter": "^0.11.3",
     "monorouter-react": "^0.4.2",
     "prop-types": "^15.7.2",
-    "rc-menu": "^7.4.29",
-    "react": "^16.10.2",
+    "rc-menu": "^7.5.3",
+    "react": "^16.11.0",
     "react-aria-modal": "^4.0.0",
     "react-cookie": "^4.0.1",
-    "react-dom": "^16.10.2",
+    "react-dom": "^16.11.0",
     "react-draggable": "^3.3.2",
     "react-dropdown": "^1.6.4",
     "react-grid-layout": "^0.16.6",
     "react-helmet": "^5.2.1",
     "react-hotkeys": "^2.0.0",
-    "react-icons": "^3.7.0",
+    "react-icons": "^3.8.0",
     "react-perfect-scrollbar": "^1.5.3",
     "react-redux": "^7.1.1",
-    "react-resizable": "^1.8.0",
+    "react-resizable": "^1.9.0",
     "react-responsive-modal": "^4.0.1",
     "react-rnd": "^10.1.1",
     "react-router-dom": "^5.1.2",
@@ -34,9 +34,9 @@
     "redux": "^4.0.4",
     "redux-starter-kit": "^0.6.2",
     "redux-thunk": "^2.3.0",
-    "styled-components": "^5.0.0-beta.8-groupsizefix",
+    "styled-components": "^5.0.0-rc.1",
     "styled-theming": "^2.2.0",
-    "tailwindcss": "^1.1.2"
+    "tailwindcss": "^1.1.3"
   },
   "scripts": {
     "start": "react-scripts start",
@@ -66,5 +66,6 @@
     "eslint-plugin-jsx-a11y": "^6.2.3",
     "eslint-plugin-react": "^7.16.0",
     "eslint-plugin-react-hooks": "^1.7.0"
-  }
+  },
+  "homepage": "http://simonceddy.github.io/eddyos"
 }

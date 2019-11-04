@@ -2,6 +2,10 @@
 
 Redoing my website, one draft at a time.
 
+Demo can be found [here](https://simonceddy.github.io/eddyos/). The demo is currently very limited and has plenty of problems, but should give a decent idea of where I'm trying to go.
+
+___
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts

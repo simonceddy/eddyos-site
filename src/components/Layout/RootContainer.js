@@ -1,10 +1,11 @@
 import React from 'react';
+import StyledPrimaryDiv from '../../shared/components/Styled/StyledPrimaryDiv';
 
 function RootContainer({ children }) {
   return (
-    <div className="flex flex-col justify-center items-center w-full h-full font-mono">
+    <StyledPrimaryDiv className="flex flex-col p-2 justify-between items-center w-full h-full font-mono">
       {children}
-    </div>
+    </StyledPrimaryDiv>
   );
 }
 

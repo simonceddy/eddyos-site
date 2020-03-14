@@ -13,6 +13,7 @@
     "react-aria-modal": "^4.0.0",
     "react-context-menu": "^3.0.2",
     "react-cookie": "^4.0.3",
+    "react-digital-clock": "^0.1.2",
     "react-dom": "^16.13.0",
     "react-draggable": "^3.3.2",
     "react-dropdown": "^1.7.0",
@@ -65,5 +66,5 @@
     "eslint-plugin-react": "^7.19.0",
     "eslint-plugin-react-hooks": "^1.7.0"
   },
-  "homepage": "http://simonceddy.github.io/eddyos"
+  "homepage": "http://simonceddy.github.io/eddyos/"
 }

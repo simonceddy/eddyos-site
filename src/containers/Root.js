@@ -1,12 +1,18 @@
 import React from 'react';
-import RootContainer from '../components/Layout/RootContainer';
+import { connect } from 'react-redux';
+import { ThemeProvider } from 'styled-components';
+import Os from './Os';
 
-function Root() {
+function Root({ themeMode }) {
   return (
-    <RootContainer>
-      eddyOS
-    </RootContainer>
+    <ThemeProvider theme={{ mode: themeMode }}>
+      <Os />
+    </ThemeProvider>
   );
 }
 
-export default Root;
+const mapStateToProps = (state) => ({
+  themeMode: state.theme.mode
+});
+
+export default connect(mapStateToProps)(Root);

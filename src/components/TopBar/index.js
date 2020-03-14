@@ -5,7 +5,7 @@ import EddyOSButton from './EddyOSButton';
 
 function TopBar({ children }) {
   return (
-    <TaskBar>
+    <TaskBar className="border-b-2">
       <LeftSection>
         <EddyOSButton />
       </LeftSection>

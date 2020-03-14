@@ -4,7 +4,7 @@ import HomeButton from './HomeButton';
 
 function BottomBar({ children }) {
   return (
-    <TaskBar>
+    <TaskBar className="border-t-2">
       <HomeButton />
       {children}
     </TaskBar>

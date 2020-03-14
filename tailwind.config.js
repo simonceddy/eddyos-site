@@ -9,7 +9,7 @@ module.exports = {
           ...defaultTheme.fontFamily.sans,
         ],
         mono: [
-          'Roboto Mono',
+          'VT323',
           ...defaultTheme.fontFamily.mono
         ]
       }

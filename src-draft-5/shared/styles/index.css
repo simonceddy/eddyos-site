@@ -1,0 +1,32 @@
+html, body, #root {
+  margin: 0;
+  height: 100%;
+  width: 100%;
+}
+
+body {
+  font-family: 'VT323', monospace;
+  /* background: white; */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
+    monospace;
+}
+
+.underlay {
+  z-index: -1;
+}
+
+.underlay-logo {
+  color: #3d0944;
+  background-color: linear-gradient(to bottom, #f8fcc5, rgb(255, 237, 157))
+}
+
+@media screen and (min-width: 640px) {
+  .menu {
+    bottom: 50px;
+  }
+}

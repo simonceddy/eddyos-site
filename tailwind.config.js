@@ -1,16 +1,22 @@
+const defaultTheme = require('tailwindcss/defaultTheme');
+
 module.exports = {
   theme: {
-    extend: {},
-    colors: {
-      black: '#000000',
-      white: '#FFFFFF',
-      green: {
-        light: '#a1ffa5',
-        default: '#24f12e',
-        dark: '#18ba20'
+    extend: {
+      fontFamily: {
+        sans: [
+          'Montserrat',
+          ...defaultTheme.fontFamily.sans,
+        ],
+        mono: [
+          'Roboto Mono',
+          ...defaultTheme.fontFamily.mono
+        ]
       }
     }
   },
-  variants: {},
-  plugins: []
+  variants: [
+    'hover', 'responsive', 'active',
+  ],
+  plugins: [],
 };

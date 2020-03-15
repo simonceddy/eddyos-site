@@ -1,7 +1,7 @@
 import { getFromStorage, setInStorage } from './storageHelpers';
 
 export function getTheme() {
-  return getFromStorage('eddyosTheme', { mode: 'pleasantSunshine' }).mode;
+  return getFromStorage('eddyosTheme', { mode: 'brightGreenDark' }).mode;
 }
 
 export function storeTheme(mode) {

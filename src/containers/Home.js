@@ -1,7 +1,8 @@
 import React from 'react';
 import {
   BsInfo as InfoIcon,
-  GoSettings as SettingsIcon
+  GoSettings as SettingsIcon,
+  MdEmail as ContactIcon,
 } from 'react-icons/all';
 import { connect } from 'react-redux';
 import Icons from '../components/Icons';
@@ -14,6 +15,7 @@ function Home() {
       <Icons>
         <IconWrapper Icon={InfoIcon} label="About Simon" to="about" />
         <IconWrapper Icon={SettingsIcon} label="Settings" to="settings" />
+        <IconWrapper Icon={ContactIcon} label="Contact Simon" to="contact" />
       </Icons>
     </Flex1Container>
   );

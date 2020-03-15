@@ -5,7 +5,7 @@ function EddyOSButton({ onClick }) {
     <button
       type="button"
       onClick={onClick}
-      className="p-1 font-mono text-xl"
+      className="p-1 m-1 font-mono text-xl"
     >
       eddyOS
     </button>

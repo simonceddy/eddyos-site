@@ -1,2 +1,4 @@
 export const SET_ICON_TEXT_SIZE = 'SET_ICON_TEXT_SIZE';
 export const SET_24_HOUR_TIME = 'SET_24_HOUR_TIME';
+
+export const SET_THEME_MODE = 'SET_THEME_MODE';

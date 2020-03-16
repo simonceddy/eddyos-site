@@ -3,17 +3,17 @@ import Flex1Container from '../shared/components/Layout/Flex1Container';
 import PageTitle from '../shared/components/Layout/PageTitle';
 import ScrollableContent from '../shared/components/Layout/ScrollableContent';
 
-function About() {
+function Work() {
   return (
     <Flex1Container>
       <PageTitle>
-        About Simon
+        Work
       </PageTitle>
       <ScrollableContent>
-        Some text about me and also I.
+        Some text about me work and also work I done.
       </ScrollableContent>
     </Flex1Container>
   );
 }
 
-export default About;
+export default Work;

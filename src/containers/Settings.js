@@ -8,7 +8,7 @@ import PageTitle from '../shared/components/Layout/PageTitle';
 
 function Settings({ setTheme, themeMode }) {
   return (
-    <Flex1Container justify="justify-between">
+    <Flex1Container justify="justify-start">
       <PageTitle>Settings</PageTitle>
       <ThemeSelector value={themeMode} onChange={(e) => setTheme(e.target.value)} themes={themes} />
     </Flex1Container>

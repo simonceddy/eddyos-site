@@ -2,9 +2,11 @@ import { combineReducers } from 'redux';
 import themeReducer from './themeReducer';
 import clockReducer from './clockReducer';
 import systemSettingsReducer from './systemSettingsReducer';
+import clientSettingsReducer from './clientSettingsReducer';
 
 export default combineReducers({
   theme: themeReducer,
   clock: clockReducer,
-  system: systemSettingsReducer
+  system: systemSettingsReducer,
+  client: clientSettingsReducer
 });

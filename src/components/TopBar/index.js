@@ -4,6 +4,7 @@ import LeftSection from './LeftSection';
 // import EddyOSButton from './EddyOSButton';
 import HomeButton from './HomeButton';
 import InfoButton from './InfoButton';
+import WorkButton from './WorkButton';
 
 function TopBar({ children }) {
   return (
@@ -12,6 +13,7 @@ function TopBar({ children }) {
         {/* <EddyOSButton /> */}
         <HomeButton />
         <InfoButton />
+        <WorkButton />
       </LeftSection>
       {children}
     </TaskBar>

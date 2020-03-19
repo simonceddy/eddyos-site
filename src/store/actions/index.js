@@ -1,12 +1,17 @@
-import { SET_ICON_TEXT_SIZE, SET_24_HOUR_TIME, SET_THEME_MODE } from '../types';
+import { SET_ICON_TEXT_SIZE, SET_12_HOUR_TIME, SET_THEME_MODE } from '../types';
+
+export {
+  addAppletToActive,
+  removeAppletFromActive
+} from './appletActions';
 
 export const setIconTextSize = (size) => ({
   type: SET_ICON_TEXT_SIZE,
   payload: { size }
 });
 
-export const set24HourTime = (hour12) => ({
-  type: SET_24_HOUR_TIME,
+export const set12HourTime = (hour12) => ({
+  type: SET_12_HOUR_TIME,
   payload: { hour12 }
 });
 

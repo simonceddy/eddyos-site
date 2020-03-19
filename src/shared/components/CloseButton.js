@@ -1,12 +1,12 @@
 import React from 'react';
-import { MdClose as CloseIcon } from 'react-icons/all';
-import StyledButton from './StyledButton';
+import { MdClose as CloseIcon } from 'react-icons/md';
+import SecondaryButton from './Styled/SecondaryButton';
 
 function CloseButton({ onClick }) {
   return (
-    <StyledButton type="button" onClick={onClick} className="text-2xl">
+    <SecondaryButton type="button" onClick={onClick} className="text-2xl">
       <CloseIcon />
-    </StyledButton>
+    </SecondaryButton>
   );
 }
 

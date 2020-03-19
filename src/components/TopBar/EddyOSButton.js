@@ -1,14 +1,15 @@
 import React from 'react';
+import SecondaryButton from '../../shared/components/Styled/SecondaryButton';
 
 function EddyOSButton({ onClick }) {
   return (
-    <button
+    <SecondaryButton
       type="button"
       onClick={onClick}
-      className="p-1 m-1 font-mono text-xl"
+      className="p-1 font-mono text-2xl font-bold relative"
     >
       eddyOS
-    </button>
+    </SecondaryButton>
   );
 }
 

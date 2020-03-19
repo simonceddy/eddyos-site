@@ -1,5 +1,12 @@
+/**
+ * Slightly modified version of react-digital-clock.
+ *
+ * Using redux with the intention of making component functional.
+ */
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+import ContextMenu from 'react-context-menu';
+import { set12HourTime } from '../store/actions';
 
 const clockTile = {
   color: 'white',
@@ -67,14 +74,26 @@ class Clock extends Component {
       minute,
       second
     });
+
     return time;
   }
 
   render() {
     return (
-      <div style={this.state.clockTile}>
-        <span style={clockSpan}>{this.state.time}</span>
-      </div>
+      <>
+        <ContextMenu
+          contextId="os-clock-container"
+          items={[
+            {
+              label: this.props.hour12 ? '24 hour time' : '12 hour time',
+              onClick: () => this.props.set12Hour(!this.props.hour12)
+            },
+          ]}
+        />
+        <div id="os-clock-container" className="z-10" style={this.state.clockTile}>
+          <span style={clockSpan}>{this.state.time}</span>
+        </div>
+      </>
     );
   }
 }
@@ -83,4 +102,8 @@ const mapStateToProps = (state) => ({
   hour12: state.clock.hour12
 });
 
-export default connect(mapStateToProps)(Clock);
+const mapDispatchToProps = (dispatch) => ({
+  set12Hour: (hour12) => dispatch(set12HourTime(hour12))
+});
+
+export default connect(mapStateToProps, mapDispatchToProps)(Clock);

@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { Provider } from 'react-redux';
-import { HashRouter as Router } from 'react-router-dom';
+// import { HashRouter as Router } from 'react-router-dom';
 import './shared/styles/scrollbar.css';
 import './shared/styles/index.css';
 import './shared/styles/tailwind.css';
@@ -13,9 +13,9 @@ import store from './store';
 
 ReactDOM.render(
   <Provider store={store}>
-    <Router>
-      <Root />
-    </Router>
+    {/* <Router> */}
+    <Root />
+    {/* </Router> */}
   </Provider>,
   document.getElementById('root')
 );

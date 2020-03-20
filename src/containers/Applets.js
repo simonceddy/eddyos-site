@@ -15,6 +15,7 @@ function Applets({ applets = [], closeApplet }) {
               key={key}
               name={name}
               onClose={() => closeApplet(applet)}
+              zIndex={10 + key}
             >
               <Component />
             </Applet>

@@ -2,7 +2,7 @@ import React from 'react';
 import theme from 'styled-theming';
 import { connect } from 'react-redux';
 import Layout from '../components/Layout';
-import TopBar from '../components/TopBar';
+import TopBar from './TopBar';
 import InnerContainer from '../components/Layout/InnerContainer';
 import Clock from './Clock';
 // import Routes from './Routes';

@@ -8,23 +8,32 @@ import Settings from '../../containers/Settings';
 import About from '../../containers/About';
 import Work from '../../containers/Work';
 
-export const settingsApplet = () => ({
+const defaultApplet = {
+  zIndex: null,
+  Component: null,
+  name: null,
+  Icon: null,
+};
+
+export const createApplet = (props = {}) => ({
+  ...defaultApplet,
+  ...props,
+});
+
+export const settingsApplet = () => createApplet({
   Component: Settings,
   name: 'Settings',
-  Icon: SettingsIcon,
-  zIndex: null,
+  Icon: SettingsIcon
 });
 
-export const aboutApplet = () => ({
+export const aboutApplet = () => createApplet({
   Component: About,
   name: 'About Simon',
-  Icon: InfoIcon,
-  zIndex: null,
+  Icon: InfoIcon
 });
 
-export const workApplet = () => ({
+export const workApplet = () => createApplet({
   Component: Work,
   name: 'Work',
-  Icon: WorkIcon,
-  zIndex: null,
+  Icon: WorkIcon
 });

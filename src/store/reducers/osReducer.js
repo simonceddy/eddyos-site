@@ -1,8 +1,8 @@
 import { combineReducers } from 'redux';
 import appletsReducer from './appletsReducer';
 
-const osMemoryReducer = combineReducers({
+const osReducer = combineReducers({
   applets: appletsReducer
 });
 
-export default osMemoryReducer;
+export default osReducer;

@@ -8,18 +8,25 @@ import Clock from './Clock';
 // import Routes from './Routes';
 import BottomBar from '../components/BottomBar';
 import { colourMaps } from '../shared/themes';
-import Home from './Home';
+import Home from '../components/Home';
 import Applets from './Applets';
 import {
-  addAppletToActive
+  addAppletToActive,
+  removeAppletFromActive,
+  setAppletTop
 } from '../store/actions';
 
 const secondary = theme('mode', colourMaps.secondary);
 
-function Os({ addApplet }) {
+function Os({
+  addApplet,
+  applets,
+  closeApplet,
+  setTop
+}) {
   return (
     <Layout>
-      <TopBar>
+      <TopBar setTop={setTop} applets={applets}>
         <Clock
           format="hh-mm"
           style={{
@@ -29,18 +36,19 @@ function Os({ addApplet }) {
       </TopBar>
       <InnerContainer>
         <Home addApplet={addApplet} />
-        <Applets />
+        <Applets applets={applets} closeApplet={closeApplet} />
       </InnerContainer>
       <BottomBar />
     </Layout>
   );
 }
 
-
-const mapStateToProps = () => ({});
+const mapStateToProps = (state) => ({ applets: state.os.applets.active });
 
 const mapDispatchToProps = (dispatch) => ({
   addApplet: (applet) => dispatch(addAppletToActive(applet)),
+  closeApplet: (applet) => dispatch(removeAppletFromActive(applet)),
+  setTop: (applet) => dispatch(setAppletTop(applet)),
 });
 
 

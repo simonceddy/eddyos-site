@@ -1,9 +1,6 @@
 import { SET_ICON_TEXT_SIZE, SET_12_HOUR_TIME, SET_THEME_MODE } from '../types';
 
-export {
-  addAppletToActive,
-  removeAppletFromActive
-} from './appletActions';
+export * from './appletActions';
 
 export const setIconTextSize = (size) => ({
   type: SET_ICON_TEXT_SIZE,

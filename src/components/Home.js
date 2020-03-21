@@ -10,7 +10,7 @@ import {
   workApplet,
   aboutApplet
 } from '../shared/applets';
-import Icons from '../components/Icons';
+import Icons from './Icons';
 import Flex1Container from '../shared/components/Layout/Flex1Container';
 import Icon from '../shared/components/Icons/Icon';
 

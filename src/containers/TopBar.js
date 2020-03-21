@@ -1,10 +1,8 @@
 import React from 'react';
-import { connect } from 'react-redux';
 import TaskBar from '../shared/components/Layout/TaskBar';
 import LeftSection from '../components/TopBar/LeftSection';
 import EddyOSButton from '../components/TopBar/EddyOSButton';
 import SecondaryButton from '../shared/components/Styled/SecondaryButton';
-import { setAppletTop } from '../store/actions/appletActions';
 
 function TopBar({ children, applets, setTop }) {
   return (
@@ -27,10 +25,4 @@ function TopBar({ children, applets, setTop }) {
   );
 }
 
-const mapStateToProps = (state) => ({ applets: state.applets.active });
-
-const mapDispatchToProps = (dispatch) => ({
-  setTop: (applet) => dispatch(setAppletTop(applet)),
-});
-
-export default connect(mapStateToProps, mapDispatchToProps)(TopBar);
+export default TopBar;

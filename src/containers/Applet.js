@@ -42,8 +42,6 @@ function Applet({
 
   const onClick = () => setTop(applet);
 
-  // console.log(applet);
-
   return (
     <ErrorBoundary>
       <StyledPrimaryRnd

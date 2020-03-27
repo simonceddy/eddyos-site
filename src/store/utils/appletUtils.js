@@ -34,3 +34,18 @@ export const repositionApplet = (applet, x, y) => ({
     y
   }
 });
+
+export const loadAppletFromStorage = (id) => {
+  const state = JSON.parse(localStorage.getItem(`eddyOs-${id}`));
+  // console.log(state);
+  return state;
+};
+
+export const storeApplet = (applet = {}) => {
+  localStorage.setItem(`eddyOs-${applet.id}`, JSON.stringify({
+    size: applet.size,
+    position: applet.position
+  }));
+  // console.log(applet);
+  return applet;
+};

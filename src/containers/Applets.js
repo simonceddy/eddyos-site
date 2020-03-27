@@ -3,6 +3,7 @@ import Applet from './Applet';
 import ErrorBoundary from '../shared/components/ErrorBoundary';
 
 function Applets({ applets = [], closeApplet }) {
+  // console.log(applets);
   return (
     <ErrorBoundary>
       <div className="absolute">

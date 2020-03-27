@@ -7,6 +7,7 @@ import {
 import Settings from '../../containers/Settings';
 import About from '../../containers/About';
 import Work from '../../containers/Work';
+import { loadAppletFromStorage } from '../../store/utils/appletUtils';
 
 const defaultApplet = {
   id: null,
@@ -26,7 +27,8 @@ const defaultApplet = {
 
 export const createApplet = (props = {}) => ({
   ...defaultApplet,
-  ...props,
+  ...loadAppletFromStorage(props.id),
+  ...props
 });
 
 export const settingsApplet = () => createApplet({

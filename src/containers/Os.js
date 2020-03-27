@@ -2,7 +2,7 @@ import React from 'react';
 import theme from 'styled-theming';
 import { connect } from 'react-redux';
 import Layout from '../components/Layout';
-import TopBar from './TopBar';
+import TopBar from '../components/TopBar';
 import InnerContainer from '../components/Layout/InnerContainer';
 import Clock from './Clock';
 // import Routes from './Routes';
@@ -22,7 +22,8 @@ function Os({
   addApplet,
   applets,
   closeApplet,
-  setTop
+  setTop,
+  icons
 }) {
   return (
     <Layout>
@@ -35,7 +36,7 @@ function Os({
         />
       </TopBar>
       <InnerContainer>
-        <Home addApplet={addApplet} />
+        <Home addApplet={addApplet} icons={icons} />
         <Applets applets={applets} closeApplet={closeApplet} />
       </InnerContainer>
       <BottomBar />
@@ -43,7 +44,10 @@ function Os({
   );
 }
 
-const mapStateToProps = (state) => ({ applets: state.os.applets.active });
+const mapStateToProps = (state) => ({
+  applets: state.os.applets.active,
+  icons: state.os.icons.applets
+});
 
 const mapDispatchToProps = (dispatch) => ({
   addApplet: (applet) => dispatch(addAppletToActive(applet)),

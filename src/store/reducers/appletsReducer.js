@@ -10,8 +10,10 @@ import {
   prepareApplet,
   setTopApplet,
   resizeApplet,
-  repositionApplet
+  repositionApplet,
+  storeApplet
 } from '../utils';
+import { setAppletTop } from '../actions';
 
 const defaultState = {
   active: [
@@ -34,7 +36,7 @@ export default function appletsReducer(state = defaultState, action) {
   switch (action.type) {
     case ADD_APPLET_TO_ACTIVE:
       if (appletIsActive(action.payload.applet, state.active)) {
-        return state;
+        return appletsReducer(state, setAppletTop(action.payload.applet));
       }
       // console.log(state);
       return {
@@ -61,7 +63,7 @@ export default function appletsReducer(state = defaultState, action) {
         ...state,
         active: [...state.active.map((applet) => {
           if (applet.Component === action.payload.applet.Component) {
-            return resizeApplet(applet, action.payload.height, action.payload.width);
+            return storeApplet(resizeApplet(applet, action.payload.height, action.payload.width));
           }
           return applet;
         })]
@@ -71,11 +73,11 @@ export default function appletsReducer(state = defaultState, action) {
         ...state,
         active: [...state.active.map((applet) => {
           if (applet.Component === action.payload.applet.Component) {
-            return repositionApplet(
+            return storeApplet(repositionApplet(
               applet,
               action.payload.x,
               action.payload.y
-            );
+            ));
           }
           return { ...applet };
         })]

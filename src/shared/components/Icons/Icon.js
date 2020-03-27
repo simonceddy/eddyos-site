@@ -8,13 +8,15 @@ function Icon({
   onClick,
   label,
   size,
-  Component
+  Component,
+  id
 }) {
   return (
     <PrimaryButton
       type="button"
       onClick={onClick}
       className="no-underline hover:underline m-1 flex flex-col justify-start items-center px-1"
+      id={id}
     >
       <IconContainer width={size} height={size}>
         <Component size={size} title={label} />

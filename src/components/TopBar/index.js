@@ -10,7 +10,7 @@ import SecondaryButton from '../../shared/components/Styled/SecondaryButton';
 import Menu from '../Menu';
 import MenuItem from '../Menu/MenuItem';
 import { addAppletToActive } from '../../store/actions';
-import { settingsApplet } from '../../shared/applets';
+import { createApplet } from '../../shared/applets';
 
 function TopBar({
   children,
@@ -26,7 +26,6 @@ function TopBar({
         <div className="relative">
           <EddyOSButton
             onClick={() => {
-              console.log('clicked eddyos button');
               setMenuToggled(!menuToggled);
             }}
           />
@@ -36,7 +35,6 @@ function TopBar({
               onClick={
                 () => {
                   openSettings();
-                  console.log('here');
                   setMenuToggled(false);
                 }
               }
@@ -62,7 +60,7 @@ function TopBar({
 }
 
 const mapDispatchToProps = (dispatch) => ({
-  openSettings: () => dispatch(addAppletToActive(settingsApplet()))
+  openSettings: () => dispatch(addAppletToActive(createApplet('settingsApplet')))
 });
 
 export default connect(() => ({}), mapDispatchToProps)(TopBar);

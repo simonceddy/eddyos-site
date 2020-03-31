@@ -1,29 +1,37 @@
 import {
   BsInfo as InfoIcon,
   BsTools as WorkIcon,
-  GoSettings as SettingsIcon,
   MdEmail as ContactIcon,
+  BsMusicPlayer as EddyTunesIcon,
+  BsFillTerminalFill as CliIcon,
 } from 'react-icons/all';
-import { aboutApplet, workApplet, settingsApplet } from '../../shared/applets';
 
 const defaultState = {
   applets: [
     {
-      id: 'aboutSimon',
+      id: 'aboutApplet',
       name: 'About Simon',
       Icon: InfoIcon,
-      loader: aboutApplet
     },
     {
-      id: 'work',
+      id: 'workApplet',
       name: 'Work',
       Icon: WorkIcon,
-      loader: workApplet
     },
     {
       name: 'Contact Simon',
       Icon: ContactIcon,
-      id: 'contactSimon',
+      id: 'contactApplet',
+    },
+    {
+      name: 'eddyTunes',
+      Icon: EddyTunesIcon,
+      id: 'eddyTunesApplet',
+    },
+    {
+      name: 'conEddy',
+      Icon: CliIcon,
+      id: 'conEddyApplet',
       loader: null
     },
   ]

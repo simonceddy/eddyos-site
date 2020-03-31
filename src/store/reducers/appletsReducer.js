@@ -35,6 +35,8 @@ const defaultState = {
 export default function appletsReducer(state = defaultState, action) {
   switch (action.type) {
     case ADD_APPLET_TO_ACTIVE:
+      if (!action.payload.applet) return state;
+
       if (appletIsActive(action.payload.applet, state.active)) {
         return appletsReducer(state, setAppletTop(action.payload.applet));
       }

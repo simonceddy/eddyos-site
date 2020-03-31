@@ -63,6 +63,7 @@ function Applet({
         onResizeStop={onResizeStop}
         onDragStop={onDragStop}
         dragHandleClassName="drag-handle"
+        bounds=".inner-container"
       >
         <StyledInvertedDiv
           className="drag-handle flex flex-row justify-between items-center w-full"

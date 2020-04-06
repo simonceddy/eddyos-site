@@ -6,10 +6,14 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import ContextMenu from 'react-context-menu';
+import theme from 'styled-theming';
 import { set12HourTime } from '../store/actions';
+import { colourMaps } from '../shared/themes';
+
+const secondary = theme('mode', colourMaps.secondary);
 
 const clockTile = {
-  color: 'white',
+  color: secondary,
   textAlign: 'center'
 };
 
@@ -99,7 +103,8 @@ class Clock extends Component {
 }
 
 const mapStateToProps = (state) => ({
-  hour12: state.clock.hour12
+  hour12: state.clock.hour12,
+  format: state.clock.format
 });
 
 const mapDispatchToProps = (dispatch) => ({

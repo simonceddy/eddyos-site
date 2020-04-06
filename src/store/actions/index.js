@@ -1,4 +1,6 @@
-import { SET_ICON_TEXT_SIZE, SET_12_HOUR_TIME, SET_THEME_MODE } from '../types';
+import {
+  SET_ICON_TEXT_SIZE, SET_12_HOUR_TIME, SET_THEME_MODE, SET_TIME_FORMAT
+} from '../types';
 
 export * from './appletActions';
 
@@ -15,4 +17,9 @@ export const set12HourTime = (hour12) => ({
 export const setThemeMode = (mode) => ({
   type: SET_THEME_MODE,
   payload: { mode }
+});
+
+export const setTimeFormat = (format) => ({
+  type: SET_TIME_FORMAT,
+  payload: { format }
 });

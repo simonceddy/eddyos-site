@@ -7,7 +7,6 @@ import InnerContainer from '../components/Layout/InnerContainer';
 import Clock from './Clock';
 // import Routes from './Routes';
 import BottomBar from '../components/BottomBar';
-import { colourMaps } from '../shared/themes';
 import Home from '../components/Home';
 import Applets from './Applets';
 import {
@@ -15,8 +14,6 @@ import {
   removeAppletFromActive,
   setAppletTop
 } from '../store/actions';
-
-const secondary = theme('mode', colourMaps.secondary);
 
 function Os({
   addApplet,
@@ -28,12 +25,7 @@ function Os({
   return (
     <Layout>
       <TopBar setTop={setTop} applets={applets}>
-        <Clock
-          format="hh-mm"
-          style={{
-            color: secondary
-          }}
-        />
+        <Clock />
       </TopBar>
       <InnerContainer>
         <Home addApplet={addApplet} icons={icons} />
@@ -46,7 +38,7 @@ function Os({
 
 const mapStateToProps = (state) => ({
   applets: state.os.applets.active,
-  icons: state.os.icons.applets
+  icons: state.os.icons.applets,
 });
 
 const mapDispatchToProps = (dispatch) => ({
